@@ -277,16 +277,16 @@ body {
 
 /* line 7, ../../app/stylesheets/_type.sass */
 a {
-  color: #556677;
+  color: #0093d3;
   text-decoration: none;
 }
 /* line 10, ../../app/stylesheets/_type.sass */
 a:visited {
-  color: #5577bb;
+  color: #006fa0;
 }
 /* line 12, ../../app/stylesheets/_type.sass */
 a:active {
-  color: #5577bb;
+  color: #07b4ff;
 }
 /* line 14, ../../app/stylesheets/_type.sass */
 a:hover {
@@ -1035,7 +1035,7 @@ body.site_index .home_marker {
 }
 /* line 77, ../../app/stylesheets/basic_mobile.sass */
 #header h1 a span {
-  color: #884444;
+  color: #86c9d7;
 }
 /* line 79, ../../app/stylesheets/basic_mobile.sass */
 #header h1 a .home_marker {
