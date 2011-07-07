@@ -7,6 +7,7 @@
         &raquo;
       = "#{SETTINGS['organization']['name']}: A community-edited guide to the AWESOME CREATIVE, TECHNOLOGY, AND BUSINESS COMMUNITY of Philadelphia, PA"
     %meta{:name=>"viewport", :content=>"width=device-width, user-scalable=no"}
+		= render :partial => 'layouts/facebook_meta'
     - force_mobile = params[:force_mobile].present?
     -#
       Level 1: All browsers, evar.
