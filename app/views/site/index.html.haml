@@ -3,7 +3,6 @@
   %span{:class => 'awesome'} awesome creative, technology, and business community
   of
   = SETTINGS['organization']['city']+ ', ' + SETTINGS['organization']['state']
-= render :partial => 'layouts/like_button'
 %ul#front_nav
   %h2#home_to Home to
   %li.people= link_to semantic_pluralize(Person.count, "Person"), people_path
