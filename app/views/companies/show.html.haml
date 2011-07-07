@@ -24,7 +24,7 @@
       = render :partial => 'tags/list', :object => @company.technologies, :locals => {:type => :company}
 
   .section.members
-    %h2 Employees
+    %h2 The Team
     - if current_person
       - if @company.employees.include?(current_person)
         = link_to "Leave this company", leave_company_path(@company), :class => 'leave', :method => :post
