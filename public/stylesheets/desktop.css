@@ -2,6 +2,7 @@
 /* line 46, ../../app/stylesheets/_mixins.sass */
 .people-text, #header #main_nav li a.people:hover, #header #main_nav li a.people.active {
   color: #e6a74d;
+
 }
 
 /* line 48, ../../app/stylesheets/_mixins.sass */
@@ -131,7 +132,10 @@
   font-size: 35px;
   margin: 0;
 }
-
+#header #main_nav {
+	width:500px;
+	margin-left:60px;
+}
 /* line 26, ../../app/stylesheets/_webfonts.sass */
 #site_intro {
   font-size: 20px;
