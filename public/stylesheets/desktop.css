@@ -347,7 +347,7 @@ body.signed_in #header #global_search {
   *zoom: 1;
   display: inline;
   float: left;
-  margin-left: 10px;
+  margin-left: 0px;
   margin-right: 10px;
   width: 500px;
   z-index: 80;
@@ -373,7 +373,7 @@ body.signed_in #header #global_search {
 }
 /* line 70, ../../app/stylesheets/desktop.sass */
 #header #main_nav li {
-  margin-right: 2em;
+  margin-right: 1em;
   margin-top: 6px;
 }
 /* line 73, ../../app/stylesheets/desktop.sass */
