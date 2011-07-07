@@ -39,7 +39,6 @@
 
     = csrf_meta_tag
     = render :partial => 'layouts/google_analytics'
-    = render :partial => 'layouts/facebook_meta'
   %body{:class => "#{controller_name} #{controller_name}_#{action_name} #{user_signed_in? ? 'signed_in' : 'not_signed_in'}"}
     #header
       .inner_container
@@ -91,5 +90,3 @@
         Follow
         = twitter_link SETTINGS['organization']['twitter']
         on Twitter
-      #facebook_like
-        = render :partial => 'layouts/like_button'
