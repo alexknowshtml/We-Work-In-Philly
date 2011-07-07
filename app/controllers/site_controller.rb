@@ -27,4 +27,9 @@ class SiteController < ApplicationController
       respond_with(@results)
     end
   end
+  
+  def about
+    
+  end
+  
 end
