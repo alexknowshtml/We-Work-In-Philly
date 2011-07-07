@@ -347,8 +347,8 @@ body.signed_in #header #global_search {
   *zoom: 1;
   display: inline;
   float: left;
-  margin-left: 10px;
-  margin-right: 60px;
+  margin-left: 60px;
+  margin-right: 10px;
   width: 500px;
   z-index: 80;
 }
