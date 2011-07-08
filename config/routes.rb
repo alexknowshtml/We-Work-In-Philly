@@ -62,6 +62,8 @@ Citizenry::Application.routes.draw do
   match '/auth/failure' => 'authentications#auth_failure'
 
   resources :changes, :controller => 'paper_trail_manager/changes'
+  
+  match '/about' => 'site#about'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
