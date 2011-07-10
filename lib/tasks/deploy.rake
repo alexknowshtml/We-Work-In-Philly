@@ -1,10 +1,10 @@
 namespace :deploy do
   desc "Deploy to staging"
   task :staging do
-    sh "git push git@heroku.com:growing-cloud-185.git master"
-    sh "heroku rake db:migrate --app growing-cloud-185"
+    sh "git push git@heroku.com:glowing-robot-700.git master"
+    sh "heroku rake db:migrate --app glowing-robot-700"
     # sh "heroku restart --app growing-cloud-185"
-    sh "open http://growing-cloud-185.heroku.com"
+    sh "open http://glowing-robot-700.heroku.com"
   end
 
   desc "Deploy to production"
