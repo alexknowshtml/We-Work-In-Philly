@@ -11,8 +11,8 @@ gem 'aws-s3'
 
 # gem 'hoptoad_notifier'
 
-gem 'tmail'
-gem 'postmark'
+# gem 'tmail'
+# gem 'postmark'
 
 #--[ Utility ]------------------------------------------------------------------
 gem 'httparty', '~> 0.7.4'
