@@ -6,13 +6,11 @@ gem 'rake', '0.9.2'
 # Uncomment if you're using sqlite
 gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'mysql' 
+gem 'pg'
 
 gem 'aws-s3'
 
 # gem 'hoptoad_notifier'
-
-# gem 'tmail'
-# gem 'postmark'
 
 #--[ Utility ]------------------------------------------------------------------
 gem 'httparty', '~> 0.7.4'
@@ -46,8 +44,9 @@ gem "responders", "~> 0.6.2"
 gem 'acts-as-taggable-on', "~> 2.0.6"
 
 gem 'paper_trail', '~> 2'
-gem 'paper_trail_manager', :git => 'https://github.com/reidab/paper_trail_manager.git'
+gem 'paper_trail_manager', :git => 'https://github.com/graybill/paper_trail_manager.git'
 # gem 'paper_trail_manager', :path => '../paper_trail_manager'
+
 
 #--[ View ]---------------------------------------------------------------------
 gem "haml", "~> 3.0.18"
