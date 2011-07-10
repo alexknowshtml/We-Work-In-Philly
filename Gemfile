@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.5'
+gem 'rake', '0.9.2'
 
 # Uncomment if you're using sqlite
 gem 'sqlite3-ruby', :require => 'sqlite3'
@@ -9,6 +10,9 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'aws-s3'
 
 # gem 'hoptoad_notifier'
+
+gem 'tmail'
+gem 'postmark'
 
 #--[ Utility ]------------------------------------------------------------------
 gem 'httparty', '~> 0.7.4'
