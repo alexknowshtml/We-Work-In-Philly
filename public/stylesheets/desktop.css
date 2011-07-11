@@ -464,7 +464,7 @@ body.signed_in #header #global_search {
   margin-right: 10px;
   width: 340px;
   margin-left: 0;
-  margin-top: 1em;
+  margin-top: 40px;
 }
 /* line 141, ../../app/stylesheets/desktop.sass */
 #site_intro .awesome {
@@ -479,6 +479,7 @@ body.signed_in #header #global_search {
   margin-right: 10px;
   width: 580px;
   margin-right: 0;
+	margin-top:10px;
 }
 
 /* line 149, ../../app/stylesheets/desktop.sass */
