@@ -6,7 +6,7 @@ gem 'rake', '0.9.2'
 # Uncomment if you're using sqlite
 gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'mysql' 
-gem 'pg'
+# gem 'pg'
 
 gem 'aws-s3'
 
@@ -88,6 +88,7 @@ group :development, :test do
   gem 'utility_belt'
 
   # -- [ Tools ] ---------------------------------------------------------------
+  gem 'heroku'
   gem 'rcov'
   gem 'ruby-debug'
   gem 'annotate'
