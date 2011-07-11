@@ -267,10 +267,6 @@ div.desktop-only {
 body {
   background: white url('/images/background.png?1307471097') repeat-x;
 }
-/* line 25, ../../app/stylesheets/desktop.sass */
-body.site_index {
-  background-position: 0 -25px;
-}
 /* line 27, ../../app/stylesheets/desktop.sass */
 body.site_index #content {
   background: transparent;
