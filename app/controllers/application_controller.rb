@@ -26,6 +26,8 @@ class ApplicationController < ActionController::Base
     direction = %w(asc desc).include?(params[:order]) ? params[:order].upcase : ''
     if ActiveRecord::Base.configurations[Rails.env]['adapter'] == 'sqlite3'
       "RANDOM() #{direction}"
+    elsif ActiveRecord::Base.configurations[Rails.env]['adapter'] == 'postgresql'
+      "RANDOM() #{direction}"
     else
       "RAND(#{seed}) #{direction}"
     end
