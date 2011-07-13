@@ -6,7 +6,7 @@
       %span.sorting
         %strong Sort by:
         = sort_link(:name) + ","
-        = sort_link(:created_at, :label => "Date added", :default_order => :desc, :is_default => :desc) + ","
-        = sort_link(:random)
+        = sort_link(:created_at, :label => "Date added", :default_order => :desc) + ","
+        = sort_link(:random, :is_default => :asc)
 
 = render :partial => 'companies/list', :object => @companies
