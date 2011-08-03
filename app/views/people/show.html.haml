@@ -44,3 +44,12 @@
     - if current_user && (current_user.admin? || current_user.person == @person)
       = link_to 'Edit', edit_person_path(@person), :class => 'edit'
       = link_to "Delete", person_path(@person), :confirm => 'Are you sure?', :method => :delete, :class => 'delete'
+    .section.contact
+      %h2 Contact Me About
+      - if @person.contact_gigs?
+        %p Gigs
+      - if @person.contact_jobs?
+        %p Jobs
+      - if @person.contact_recruiter?
+        %p Recruiter/Placement Services
+  

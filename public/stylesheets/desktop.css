@@ -517,24 +517,29 @@ body.signed_in #header #global_search {
   margin-right: 2em;
 }
 /* line 170, ../../app/stylesheets/desktop.sass */
+#content .section.contact p {
+  padding-left: 20px;
+  background: url("/images/accept.png") no-repeat;
+}
+/* line 174, ../../app/stylesheets/desktop.sass */
 #content #people_search_results li {
   width: 600px;
 }
-/* line 173, ../../app/stylesheets/desktop.sass */
+/* line 177, ../../app/stylesheets/desktop.sass */
 #content .resource_list li {
   width: auto;
 }
-/* line 175, ../../app/stylesheets/desktop.sass */
+/* line 179, ../../app/stylesheets/desktop.sass */
 #content .resource_list li h3 {
   display: inline;
   margin-right: 0.5em;
 }
-/* line 178, ../../app/stylesheets/desktop.sass */
+/* line 182, ../../app/stylesheets/desktop.sass */
 #content .resource_grid {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 180, ../../app/stylesheets/desktop.sass */
+/* line 184, ../../app/stylesheets/desktop.sass */
 #content .resource_grid li {
   display: inline;
   float: left;
@@ -542,16 +547,16 @@ body.signed_in #header #global_search {
   margin-right: 10px;
   width: 220px;
 }
-/* line 182, ../../app/stylesheets/desktop.sass */
+/* line 186, ../../app/stylesheets/desktop.sass */
 #content .single_record {
   position: relative;
 }
-/* line 184, ../../app/stylesheets/desktop.sass */
+/* line 188, ../../app/stylesheets/desktop.sass */
 #content .single_record.with_image {
   padding-left: 230px;
   min-height: 220px;
 }
-/* line 187, ../../app/stylesheets/desktop.sass */
+/* line 191, ../../app/stylesheets/desktop.sass */
 #content .single_record img.person_photo, #content .single_record img.logo {
   width: 220px;
   position: absolute;
@@ -559,18 +564,18 @@ body.signed_in #header #global_search {
   left: 0;
   margin: 0;
 }
-/* line 193, ../../app/stylesheets/desktop.sass */
+/* line 197, ../../app/stylesheets/desktop.sass */
 #content .single_record .record_actions {
   position: absolute;
   right: 0;
   top: 0;
   z-index: 10;
 }
-/* line 198, ../../app/stylesheets/desktop.sass */
+/* line 202, ../../app/stylesheets/desktop.sass */
 #content .single_record #claim_user {
   float: right;
 }
-/* line 201, ../../app/stylesheets/desktop.sass */
+/* line 205, ../../app/stylesheets/desktop.sass */
 #content #welcome #possible_duplicates {
   display: inline;
   float: left;
@@ -580,18 +585,18 @@ body.signed_in #header #global_search {
   margin-right: 0;
   float: right;
 }
-/* line 205, ../../app/stylesheets/desktop.sass */
+/* line 209, ../../app/stylesheets/desktop.sass */
 #content #welcome #possible_duplicates li {
   position: relative;
   padding-right: 120px;
 }
-/* line 208, ../../app/stylesheets/desktop.sass */
+/* line 212, ../../app/stylesheets/desktop.sass */
 #content #welcome #possible_duplicates li .claim {
   position: absolute;
   right: 0;
   top: 10px;
 }
-/* line 212, ../../app/stylesheets/desktop.sass */
+/* line 216, ../../app/stylesheets/desktop.sass */
 #content #welcome #add_yourself {
   display: inline;
   float: left;
@@ -600,7 +605,7 @@ body.signed_in #header #global_search {
   width: 580px;
   margin-left: 0;
 }
-/* line 216, ../../app/stylesheets/desktop.sass */
+/* line 220, ../../app/stylesheets/desktop.sass */
 #content #user_home #profile {
   display: inline;
   float: left;
@@ -609,7 +614,7 @@ body.signed_in #header #global_search {
   width: 580px;
   margin-left: 0;
 }
-/* line 219, ../../app/stylesheets/desktop.sass */
+/* line 223, ../../app/stylesheets/desktop.sass */
 #content #user_home #authentications {
   display: inline;
   float: left;
@@ -619,12 +624,12 @@ body.signed_in #header #global_search {
   margin-right: 0;
 }
 
-/* line 223, ../../app/stylesheets/desktop.sass */
+/* line 227, ../../app/stylesheets/desktop.sass */
 div#creepy-baby-sloth {
   margin: 2em auto 0 auto;
   width: 640px;
 }
-/* line 226, ../../app/stylesheets/desktop.sass */
+/* line 230, ../../app/stylesheets/desktop.sass */
 div#creepy-baby-sloth img {
   border: 2px solid #ef6c7b;
 }
