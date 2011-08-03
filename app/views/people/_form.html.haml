@@ -22,4 +22,11 @@
     - if current_user.admin?
       = f.input :user, :include_blank => '-- none --', :label_method => :label_for_admin
     = hidden_field_tag :form_context, context
+  = f.inputs :name => "Contact Me About Work", :id => "contact_options" do
+    = f.check_box :contact_gigs, :label => "Contact me about gigs"
+    = f.label :contact_gigs, :label => "Contact me about gigs"
+    = f.check_box :contact_jobs, :label => "Contact me about jobs"
+    = f.label :contact_gigs, :label => "Contact me about jobs"
+    = f.check_box :contact_recruiter, :label => "Contact me about recruiter/placement services"
+    = f.label :contact_gigs, :label => "Contact me about recruiter/placement services"
   = f.buttons

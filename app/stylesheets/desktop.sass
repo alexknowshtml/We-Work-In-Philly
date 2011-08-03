@@ -12,6 +12,13 @@ form.formtastic
   input, textarea
     width: auto
 
+fieldset#contact_options
+  input[type=checkbox], label
+    float: left
+    display: block
+  label
+    margin: -18px 0 0 24px
+
 .desktop-only
   display: inline
 div.desktop-only
@@ -62,7 +69,7 @@ body
     a:hover img
       +opacity(0.7)
   #main_nav
-    width:500px
+    width: 500px
     display: block
     +horizontal-list
     @extend .league_gothic
