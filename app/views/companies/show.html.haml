@@ -35,4 +35,4 @@
     = render :partial => 'people/list', :object => @company.employees, :locals => {:context => :member_list}
 
     %script
-      $(function() { $("img.logo:first").load(function(){ console.log($(this).height())}) });
+      $(function() { $("img.logo:first").load(function(){ $("img.map:first").css('top',$(this).height() + 5)}) });
