@@ -45,7 +45,9 @@
       = link_to 'Edit', edit_person_path(@person), :class => 'edit'
       = link_to "Delete", person_path(@person), :confirm => 'Are you sure?', :method => :delete, :class => 'delete'
     .section.contact
-      %h2 Contact Me About
+      - if !@person.contact_recruiter? && !@person.contact_jobs? && !@person.contact_gigs?
+      - else
+        %h2 Contact Me About
       - if @person.contact_gigs?
         %p Gigs
       - if @person.contact_jobs?
