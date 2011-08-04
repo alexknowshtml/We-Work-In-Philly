@@ -33,3 +33,6 @@
       - else
         = link_to "Join this company", join_company_path(@company), :class => 'join', :method => :post
     = render :partial => 'people/list', :object => @company.employees, :locals => {:context => :member_list}
+
+    %script
+      $(function() { $("img.logo:first").load(function(){ console.log($(this).height())}) });
