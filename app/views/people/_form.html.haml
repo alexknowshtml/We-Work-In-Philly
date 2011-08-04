@@ -2,7 +2,7 @@
 = semantic_form_for(@person, :html => {:multipart => true}) do |f|
   = f.inputs do
     = f.input :name
-    = f.input :email, :label => "Email address", :hint => "We'll never share and never spam. Promise."
+    -# = f.input :email, :label => "Email address", :hint => "We'll never share and never spam. Promise."
     = f.input :location, :hint => 'Neighborhood-level info preferred'
     -# = f.input :address1, :label => "Mailing address", :hint => "We'll keep this secret, too"
     -# = f.input :address2, :label => "Address line 2", :hint => "If you need it"
