@@ -31,13 +31,15 @@ class Company < ActiveRecord::Base
   validates_presence_of :name
   
   def clean_address
-    addr = address.gsub(" ", "+").gsub(",", "")
+    address.gsub(" ", "+").gsub(",", "")
   end
 
   def map_url
-        "http://maps.googleapis.com/maps/api/staticmap?center=#{clean_address}&zoom=14&size=200x220&maptype=roadmap&markers=color:blue%7C#{clean_address}&sensor=false"
+        "http://maps.googleapis.com/maps/api/staticmap?center=#{clean_address}&zoom=13&size=200x220&maptype=roadmap&markers=color:blue%7C#{clean_address}&sensor=false"
   end
-  
+  def google_maps_link
+    "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=#{clean_address}"
+  end
 end
 
 
