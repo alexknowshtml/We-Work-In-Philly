@@ -1,6 +1,6 @@
 .single_record.company{:class => @company.logo.file? ? 'with_image' : 'without_image'}
   = image_tag(@company.logo.url(:medium), :class => 'logo') if @company.logo.file?
-  - if @company.address.present?
+  - if @company.address.present? && @company.logo.file?
     = link_to image_tag(@company.map_url, :class => 'map'), @company.google_maps_link
   %h1= @company.name
   - if @company.address.present?
@@ -33,3 +33,6 @@
       - else
         = link_to "Join this company", join_company_path(@company), :class => 'join', :method => :post
     = render :partial => 'people/list', :object => @company.employees, :locals => {:context => :member_list}
+
+    %script
+      $(function() { $("img.logo:first").load(function(){ $("img.map:first").css('top',$(this).height() + 20)}) });

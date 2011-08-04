@@ -547,7 +547,7 @@ body.signed_in #header #global_search {
 /* line 176, ../../app/stylesheets/desktop.sass */
 #content .single_record.with_image {
   padding-left: 230px;
-  min-height: 220px;
+  min-height: 440px;
 }
 /* line 179, ../../app/stylesheets/desktop.sass */
 #content .single_record img.person_photo, #content .single_record img.logo, #content .single_record img.map {
@@ -559,7 +559,7 @@ body.signed_in #header #global_search {
 }
 
 #content .single_record img.person_photo.map, #content .single_record img.logo.map, #content .single_record img.map.map {
-	top: 200px;
+	top: 230px;
 }
 /* line 185, ../../app/stylesheets/desktop.sass */
 #content .single_record .record_actions {

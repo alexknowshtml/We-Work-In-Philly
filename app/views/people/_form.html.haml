@@ -3,10 +3,10 @@
   = f.inputs do
     = f.input :name
     = f.input :email, :label => "Email address", :hint => "We'll keep this secret"
-    = f.input :location, :hint => 'Neighborhood-level info preferred'
-    = f.input :address1, :label => "Mailing address", :hint => "We'll keep this secret, too"
-    = f.input :address2, :label => "Address line 2", :hint => "If you need it"
-    = f.input :zipcode, :label => "Zipcode", :size => 20
+    -# = f.input :location, :hint => 'Neighborhood-level info preferred'
+    -# = f.input :address1, :label => "Mailing address", :hint => "We'll keep this secret, too"
+    -# = f.input :address2, :label => "Address line 2", :hint => "If you need it"
+    -# = f.input :zipcode, :label => "Zipcode", :size => 20
     = f.input :url, :label => "Website"
     = f.input :bio
     = f.input :tag_list, :as => :text, :label => 'Tags (interests, titles, personal descriptors)', :hint => "Comma separated, please", :input_html => {:class => 'tags'}
@@ -22,7 +22,7 @@
     - if current_user.admin?
       = f.input :user, :include_blank => '-- none --', :label_method => :label_for_admin
     = hidden_field_tag :form_context, context
-  = f.inputs :name => "Contact Me About Work", :id => "contact_options" do
+  -# = f.inputs :name => "Contact Me About Work", :id => "contact_options" do
     = f.check_box :contact_gigs, :label => "Contact me about gigs"
     = f.label :contact_gigs, :label => "Contact me about gigs"
     = f.check_box :contact_jobs, :label => "Contact me about jobs"
