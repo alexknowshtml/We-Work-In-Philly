@@ -35,13 +35,11 @@ class Company < ActiveRecord::Base
   # after_validation :geocode          # auto-fetch coordinates
   
   def map_url
-    "http://maps.googleapis.com/maps/api/staticmap?center=#{clean_address}&zoom=14&size=200x220&maptype=roadmap&markers=color:blue%7Clabel:#{clean_address}&sensor=false"
+    "http://maps.googleapis.com/maps/api/staticmap?center=#{clean_address}&zoom=14&size=200x220&maptype=roadmap&markers=color:blue%7C#{clean_address}&sensor=false"
   end
   
   def clean_address
-    addr = address.gsub(" ", "+")
-    addr = addr.gsub(",", "")
-    addr
+    addr = address.gsub(" ", "+").gsub(",", "")
   end
   def geocoded_address
     address
