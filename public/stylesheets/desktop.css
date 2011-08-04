@@ -557,7 +557,7 @@ body.signed_in #header #global_search {
   min-height: 220px;
 }
 /* line 191, ../../app/stylesheets/desktop.sass */
-#content .single_record img.person_photo, #content .single_record img.logo {
+#content .single_record img.person_photo, #content .single_record img.logo, #content .single_record img.map {
   width: 220px;
   position: absolute;
   top: 0;
@@ -565,17 +565,21 @@ body.signed_in #header #global_search {
   margin: 0;
 }
 /* line 197, ../../app/stylesheets/desktop.sass */
+#content .single_record img.person_photo.map, #content .single_record img.logo.map, #content .single_record img.map.map {
+  top: 200px;
+}
+/* line 199, ../../app/stylesheets/desktop.sass */
 #content .single_record .record_actions {
   position: absolute;
   right: 0;
   top: 0;
   z-index: 10;
 }
-/* line 202, ../../app/stylesheets/desktop.sass */
+/* line 204, ../../app/stylesheets/desktop.sass */
 #content .single_record #claim_user {
   float: right;
 }
-/* line 205, ../../app/stylesheets/desktop.sass */
+/* line 207, ../../app/stylesheets/desktop.sass */
 #content #welcome #possible_duplicates {
   display: inline;
   float: left;
@@ -585,18 +589,18 @@ body.signed_in #header #global_search {
   margin-right: 0;
   float: right;
 }
-/* line 209, ../../app/stylesheets/desktop.sass */
+/* line 211, ../../app/stylesheets/desktop.sass */
 #content #welcome #possible_duplicates li {
   position: relative;
   padding-right: 120px;
 }
-/* line 212, ../../app/stylesheets/desktop.sass */
+/* line 214, ../../app/stylesheets/desktop.sass */
 #content #welcome #possible_duplicates li .claim {
   position: absolute;
   right: 0;
   top: 10px;
 }
-/* line 216, ../../app/stylesheets/desktop.sass */
+/* line 218, ../../app/stylesheets/desktop.sass */
 #content #welcome #add_yourself {
   display: inline;
   float: left;
@@ -605,7 +609,7 @@ body.signed_in #header #global_search {
   width: 580px;
   margin-left: 0;
 }
-/* line 220, ../../app/stylesheets/desktop.sass */
+/* line 222, ../../app/stylesheets/desktop.sass */
 #content #user_home #profile {
   display: inline;
   float: left;
@@ -614,7 +618,7 @@ body.signed_in #header #global_search {
   width: 580px;
   margin-left: 0;
 }
-/* line 223, ../../app/stylesheets/desktop.sass */
+/* line 225, ../../app/stylesheets/desktop.sass */
 #content #user_home #authentications {
   display: inline;
   float: left;
@@ -624,12 +628,12 @@ body.signed_in #header #global_search {
   margin-right: 0;
 }
 
-/* line 227, ../../app/stylesheets/desktop.sass */
+/* line 229, ../../app/stylesheets/desktop.sass */
 div#creepy-baby-sloth {
   margin: 2em auto 0 auto;
   width: 640px;
 }
-/* line 230, ../../app/stylesheets/desktop.sass */
+/* line 232, ../../app/stylesheets/desktop.sass */
 div#creepy-baby-sloth img {
   border: 2px solid #ef6c7b;
 }

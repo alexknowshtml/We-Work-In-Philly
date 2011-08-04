@@ -21,6 +21,7 @@ gem 'aws-s3'
 gem 'httparty', '~> 0.7.4'
 gem "json", "~> 1.4.6"
 gem 'addressable', '~> 2.2.4'
+gem 'geocoder'
 
 #--[ Authentication ]-----------------------------------------------------------
 gem 'devise', "~> 1.1.5"

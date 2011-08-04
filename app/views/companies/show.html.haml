@@ -1,5 +1,6 @@
 .single_record.company{:class => @company.logo.file? ? 'with_image' : 'without_image'}
   = image_tag(@company.logo.url(:medium), :class => 'logo') if @company.logo.file?
+  = image_tag(@company.map_url, :class => 'map')
   %h1= @company.name
   - if @company.address.present?
     .location= @company.address

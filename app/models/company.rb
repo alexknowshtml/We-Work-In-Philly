@@ -1,9 +1,10 @@
 class Company < ActiveRecord::Base
   include SearchEngine
+
   has_paper_trail :ignore => [:delta]
   acts_as_taggable_on :tags, :technologies
   sortable :created_at, :desc
-
+  
   has_attached_file :logo, :styles => { :medium => '220x220', :thumb => '48x48' }, 
     :storage => :s3,
     :bucket => 'weworkinphilly',
@@ -28,6 +29,23 @@ class Company < ActiveRecord::Base
   has_many :employees, :through => :employments, :source => :person
 
   validates_presence_of :name
+
+  # include Geocoder::Model
+  # geocoded_by :address   # can also be an IP address
+  # after_validation :geocode          # auto-fetch coordinates
+  
+  def map_url
+    "http://maps.googleapis.com/maps/api/staticmap?center=#{clean_address}&zoom=14&size=200x220&maptype=roadmap&markers=color:blue%7Clabel:#{clean_address}&sensor=false"
+  end
+  
+  def clean_address
+    addr = address.gsub(" ", "+")
+    addr = addr.gsub(",", "")
+    addr
+  end
+  def geocoded_address
+    address
+  end
 end
 
 
