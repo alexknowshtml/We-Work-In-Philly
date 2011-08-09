@@ -1,0 +1,19 @@
+json.company do
+	json.name 		@company.name
+	json.user_id	@company.id
+	json.website	@company.url
+	json.location @company.address
+	json.logo			@company.logo.url
+	json.tags do
+		@company.tags.each do |t|
+			json.name t.name.gsub(/\r\n/, " ")
+		end
+	end
+	json.employees do
+		@company.employees.each do |e|
+			json.name e.name
+		end
+	end
+end
+
+puts json.compile!
