@@ -1,0 +1,30 @@
+json.array! @people do
+	@people.each do |ppl|
+		json.array_item! do
+			json.person do
+				json.name 		ppl.name
+				json.user_id	ppl.id
+				json.website	ppl.url
+				json.biography ppl.bio.gsub(/\r\n/, " ").strip!
+				json.location ppl.location
+				json.companies do
+					ppl.companies.each do |c|
+						json.name c.name
+					end
+				end
+				json.groups do
+					ppl.groups.each do |g|
+						json.name g.name
+					end
+				end
+				json.tags do
+					ppl.tags.each do |t|
+						json.name t.name.gsub(/\r\n/, " ")
+					end
+				end
+			end
+		end
+	end
+end
+
+puts json.compile!

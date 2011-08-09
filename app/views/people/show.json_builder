@@ -1,0 +1,24 @@
+json.person do
+	json.name @person.name
+	json.user_id	@person.id
+	json.website	@person.url
+	json.biography @person.bio.gsub(/\r\n/, " ").strip!
+	json.location @person.location
+	json.companies do
+		@person.companies.each do |c|
+			json.name c.name
+		end
+	end
+	json.groups do
+		@person.groups.each do |g|
+			json.name g.name
+		end
+	end
+	json.tags do
+		@person.tags.each do |t|
+			json.name t.name.gsub(/\r\n/, " ")
+		end
+	end
+end
+
+puts json.compile!
