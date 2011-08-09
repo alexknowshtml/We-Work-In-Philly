@@ -18,6 +18,11 @@ json.array! @people do
 						json.name g.name
 					end
 				end
+				json.projects do
+					ppl.projects.each do |p|
+						json.name p.name
+					end
+				end
 				json.tags do
 					ppl.tags.each do |t|
 						json.name t.name.gsub(/\r\n/, " ")
