@@ -2,6 +2,7 @@ json.person do
 	json.name @person.name
 	json.user_id	@person.id
 	json.website	@person.url
+	json.image		@person.photo.url
 	json.biography @person.bio.gsub(/\r\n/, " ").strip!
 	json.location @person.location
 	json.companies do

@@ -5,6 +5,7 @@ json.array! @people do
 				json.name 		ppl.name
 				json.user_id	ppl.id
 				json.website	ppl.url
+				json.image		ppl.photo.url
 				json.biography ppl.bio.gsub(/\r\n/, " ").strip!
 				json.location ppl.location
 				json.companies do
