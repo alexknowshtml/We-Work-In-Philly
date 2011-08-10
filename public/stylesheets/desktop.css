@@ -620,6 +620,17 @@ body.signed_in #header #global_search {
   width: 340px;
   margin-right: 0;
 }
+#content #user_home #badges {
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 340px;
+  margin-right: 0;
+}
+#content #user_home #badges img {
+	margin-left: 120px;
+}
 
 /* line 215, ../../app/stylesheets/desktop.sass */
 div#creepy-baby-sloth {
@@ -629,4 +640,17 @@ div#creepy-baby-sloth {
 /* line 218, ../../app/stylesheets/desktop.sass */
 div#creepy-baby-sloth img {
   border: 2px solid #ef6c7b;
+}
+.badge img {
+	margin: 0 auto;
+}
+pre.widget {
+	white-space: pre-wrap;       /* css-3 */
+	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	white-space: -pre-wrap;      /* Opera 4-6 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  width: 340px;
+	background: #ccc;
+	padding: 10px;
 }
