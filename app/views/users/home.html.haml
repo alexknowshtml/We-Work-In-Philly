@@ -28,7 +28,7 @@
       = link_to image_tag("http://weworkinphilly.com/images/logo120x120.jpeg"), "http://weworkinphilly.com#{person_path(current_user)}"
       -#= render 'widget_controls', :locals => {:widget => "person"}
       %h3 Copy and paste
-      %textarea.widget#person
+      %textarea.widget#person{:rows => 3}
         = "<a href=\"http://weworkinphilly.com#{person_path(current_user)}\"><img src=\"http://weworkinphilly.com/images/logo120x120.jpeg\" /></a>"
       %br
       %input{:value => "<a href=\"http://weworkinphilly.com#{person_path(current_user)}\"><img src=\"http://weworkinphilly.com/images/logo120x120.jpeg\" /></a>", :width => 300}
