@@ -121,12 +121,14 @@
 }
 
 /* line 15, ../../app/stylesheets/_webfonts.sass */
-.league_gothic, h1, h2, #site_intro, #front_nav, #header #main_nav {
+.league_gothic, h1, h2, h3, #site_intro, #front_nav, #header #main_nav {
   font-family: LeagueGothicRegular, "Impact";
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
 }
-
+h3 {
+	color: #000;
+}
 /* line 23, ../../app/stylesheets/_webfonts.sass */
 #header h1 {
   font-size: 35px;
@@ -650,8 +652,11 @@ pre.widget {
 	white-space: -pre-wrap;      /* Opera 4-6 */
 	white-space: -o-pre-wrap;    /* Opera 7 */
 	word-wrap: break-word;       /* Internet Explorer 5.5+ */
-  width: 340px;
+  width: 300px;
 	background: #ccc;
 	padding: 10px;
 	font-size: 12px;
+}
+#badges textarea, #badges input {
+	width: 320px;
 }
