@@ -226,6 +226,8 @@ GEM
       mime-types
     pg (0.11.0)
     polyglot (0.3.1)
+    powder (0.1.4)
+      thor (>= 0.11.5)
     pyu-ruby-sasl (0.0.3.3)
     rack (1.2.3)
     rack-jsonp (1.2.0)
@@ -358,6 +360,7 @@ DEPENDENCIES
   paper_trail_manager!
   paperclip (~> 2.3)
   pg
+  powder
   rack-jsonp (~> 1.2.0)
   rails (= 3.0.9)
   rake (= 0.9.2)

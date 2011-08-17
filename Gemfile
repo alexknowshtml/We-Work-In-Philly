@@ -86,6 +86,7 @@ group :development, :test do
   gem 'ruby-debug'
   gem 'annotate'
   gem "nifty-generators"
+  gem 'powder'
 end
 
 group :test do
