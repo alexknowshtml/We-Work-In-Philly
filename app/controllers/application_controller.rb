@@ -2,6 +2,9 @@ require "application_responder"
 
 class ApplicationController < ActionController::Base
   self.responder = ApplicationResponder
+	
+	before_filter :set_api_request_format, :if => :api_subdomain?
+	
   respond_to :html, :json, :xml
 
   protect_from_forgery
@@ -94,4 +97,13 @@ class ApplicationController < ActionController::Base
     end
   end
   helper_method :page_title
+	
+	private
+	def set_api_request_format
+    request.format = :json
+  end 
+
+  def api_subdomain?
+    request.subdomains.include? 'api' 
+  end
 end
