@@ -631,7 +631,7 @@ body.signed_in #header #global_search {
   margin-right: 0;
 }
 #content #user_home #badges img {
-	margin-left: 120px;
+	margin: 10px 0 0 10px;
 }
 
 /* line 215, ../../app/stylesheets/desktop.sass */
