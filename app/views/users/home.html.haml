@@ -23,7 +23,7 @@
 
     = render :partial => 'authentications/list', :object => current_user.authentications
   #badges
-    -# if current_user
+    - if current_user
       %h2 Put a badge on your website
       = link_to image_tag("http://weworkinphilly.s3.amazonaws.com/app/public/wwiplogos/logo120x120.jpeg"), "http://weworkinphilly.com#{person_path(current_user)}"
       -#= render 'widget_controls', :locals => {:widget => "person"}
