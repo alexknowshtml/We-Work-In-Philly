@@ -1,0 +1,24 @@
+json.array! @projects do
+	@projects.each do |proj|
+		json.array_item! do
+			json.project do
+				json.name 		proj.name
+				json.id				proj.id
+				json.website	proj.url
+				json.logo			proj.logo.url
+				json.tags do
+					proj.tags.each do |t|
+						json.name t.name.gsub(/\r\n/, " ")
+					end
+				end
+				json.people do
+					proj.people.each do |e|
+						json.name e.name
+					end
+				end
+			end
+		end
+	end
+end
+
+puts json.compile!
