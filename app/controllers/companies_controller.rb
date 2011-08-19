@@ -5,11 +5,6 @@ class CompaniesController < InheritedResources::Base
 
   before_filter :authenticate_user!, :except => [:index, :show, :tag]
 
-	def index
-		@companies = Company.all
-		index!
-	end
-
   def tag
     @tag = params[:tag]
 
