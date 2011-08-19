@@ -35,10 +35,15 @@ class PeopleController < InheritedResources::Base
       @found_people = []
       current_user.authentications.find(authentications).each do |auth|
         if auth.api_client
-          @found_people += auth.api_client.search(query)
-          # if auth.provider == 'twitter' && auth.api_client.client.rate_limit_status.exists?
-            # @rate_limit_status = auth.api_client.client.rate_limit_status
-          # end
+          begin
+            @found_people += auth.api_client.search(query)
+          rescue APIAuthenticationError => e
+            notify_hoptoad(ex)
+          end
+
+          if auth.provider == 'twitter'
+            @rate_limit_status = auth.api_client.client.rate_limit_status
+          end
         end
       end
 

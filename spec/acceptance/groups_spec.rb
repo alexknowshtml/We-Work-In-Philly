@@ -30,6 +30,16 @@ feature "The group index" do
     page.find(".groups.section_header").should have_content @first.tags.first.name.capitalize
     page.should have_content @first.name
   end
+
+  scenario "should display warning when told to paginate by invalid page number" do
+    visit groups_path(:page => "asdf")
+    page.find("#flash .error").should have_content "paginate"
+  end
+
+  scenario "should display warning when told to sort by invalid parameters" do
+    visit groups_path(:order => "asdf")
+    page.find("#flash .error").should have_content "sort"
+  end
 end
 
 feature "The group show page" do

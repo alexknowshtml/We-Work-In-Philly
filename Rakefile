@@ -14,3 +14,10 @@ module ::RakeFileUtils
 end
 
 Citizenry::Application.load_tasks
+
+desc "Run specs"
+task :spec do
+  sh "bundle exec rspec spec"
+end
+
+task :default => :spec

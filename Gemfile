@@ -89,9 +89,10 @@ group :development, :test do
   gem 'powder'
 end
 
+
+gem 'rspec-rails', '>= 2.0.0.beta.22'
 group :test do
   # -- [ Testing ] -------------------------------------------------------------
-  gem 'rspec-rails', '>= 2.0.0.beta.22'
   gem "mocha"
   gem "fakeweb"
   gem "factory_girl_rails"
