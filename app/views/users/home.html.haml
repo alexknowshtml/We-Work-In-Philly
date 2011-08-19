@@ -25,7 +25,7 @@
   #badges
     - if current_user
       %h2 Put a badge on your website
-      = link_to image_tag("http://weworkinphilly.s3.amazonaws.com/app/public/wwiplogos/logo120x120.jpeg"), "http://weworkinphilly.com#{person_path(current_user)}"
+      = link_to image_tag("http://weworkinphilly.s3.amazonaws.com/app/public/wwiplogos/logo120x120.jpeg"), "http://weworkinphilly.com/people/#{current_user.person.slug}"
       -#= render 'widget_controls', :locals => {:widget => "person"}
       %h3 Copy and paste
-      %input{:value => "<a href=\"http://weworkinphilly.com#{person_path(current_user)}\"><img src=\"http://weworkinphilly.s3.amazonaws.com/app/public/wwiplogos/logo120x120.jpeg\" /></a>", :width => 300}
+      %input{:value => "<a href=\"http://weworkinphilly.com/people/#{current_user.person.slug}\"><img src=\"http://weworkinphilly.s3.amazonaws.com/app/public/wwiplogos/logo120x120.jpeg\" /></a>", :width => 300}
