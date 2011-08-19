@@ -1,6 +1,6 @@
 namespace :friendly_id do
 	desc "Populate friendly_id slugs for existing records"
-	task :make_slugs do
+	task :make_slugs => :environment do
 		# TODO: implement some sexy map code
 		Person.all.map(&:save)
 		Company.all.map(&:save)
