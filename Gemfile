@@ -22,6 +22,7 @@ gem 'httparty', '~> 0.7.4'
 gem "json", "~> 1.4.6"
 gem "json_builder"
 gem 'addressable', '~> 2.2.4'
+gem "friendly_id4", "4.0.0.beta3", :require => "friendly_id"
 
 #--[ Authentication ]-----------------------------------------------------------
 gem 'devise', "~> 1.1.5"

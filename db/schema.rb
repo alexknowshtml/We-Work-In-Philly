@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110804002247) do
+ActiveRecord::Schema.define(:version => 20110819175731) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -39,7 +39,10 @@ ActiveRecord::Schema.define(:version => 20110804002247) do
     t.boolean  "delta",             :default => true, :null => false
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "slug"
   end
+
+  add_index "companies", ["slug"], :name => "index_companies_on_slug", :unique => true
 
   create_table "company_projects", :force => true do |t|
     t.integer  "company_id"
@@ -86,7 +89,10 @@ ActiveRecord::Schema.define(:version => 20110804002247) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
     t.boolean  "delta",             :default => true, :null => false
+    t.string   "slug"
   end
+
+  add_index "groups", ["slug"], :name => "index_groups_on_slug", :unique => true
 
   create_table "people", :force => true do |t|
     t.string   "email"
@@ -113,7 +119,10 @@ ActiveRecord::Schema.define(:version => 20110804002247) do
     t.integer  "contact_gigs"
     t.integer  "contact_jobs"
     t.integer  "contact_recruiter"
+    t.string   "slug"
   end
+
+  add_index "people", ["slug"], :name => "index_people_on_slug", :unique => true
 
   create_table "project_memberships", :force => true do |t|
     t.integer  "person_id"
@@ -134,7 +143,10 @@ ActiveRecord::Schema.define(:version => 20110804002247) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
     t.boolean  "delta",             :default => true, :null => false
+    t.string   "slug"
   end
+
+  add_index "projects", ["slug"], :name => "index_projects_on_slug", :unique => true
 
   create_table "resource_links", :force => true do |t|
     t.string   "name"

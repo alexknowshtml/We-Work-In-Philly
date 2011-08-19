@@ -5,6 +5,8 @@ class Company < ActiveRecord::Base
   acts_as_taggable_on :tags, :technologies
   sortable :created_at, :desc
   
+	extend FriendlyId
+  friendly_id :name, :use => :slugged
   has_attached_file :logo, :styles => { :medium => '220x220', :thumb => '48x48' }, 
     :storage => :s3,
     :bucket => 'weworkinphilly',
