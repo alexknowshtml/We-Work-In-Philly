@@ -1,0 +1,68 @@
+:javascript
+	function initialize() {
+		var myLatlng = new google.maps.LatLng(39.9654,-75.1425);
+		var myOptions = {
+			zoom: 12
+			,center: myLatlng
+			,mapTypeId: google.maps.MapTypeId.ROADMAP
+		}
+		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		
+		var markers = [];
+		var infowindows = [];
+		
+		var companies = {
+			"company": {
+				"name": "Azavea",
+				"location": {
+					"address": "340 N 12th St, Suite 402, Philadelphia, PA",
+					"lat": 39.958718,
+					"lng": -75.158395
+				},
+				"logo": "http://s3.amazonaws.com/weworkinphilly/app/public/system/logos/95/original/azavea_CMYK_300dpi_220px_square.png?1310083905",
+				"tags": {
+					"name": "Software development"
+				},
+				"user_id": 95,
+				"employees": {
+					"name": "Josh Marcus"
+				},
+				"website": "http://www.azavea.com"
+			}
+		};
+		
+		
+		$.each (companies, function(index, company){
+			console.log(company);
+		});
+		
+		
+		markers[companies.company.name] = new google.maps.Marker({
+			position: new google.maps.LatLng(companies.company.location.lat, companies.company.location.lng)
+			,map: map
+			,title:"Hello World!"
+		});
+			
+		infowindows[companies.company.name] = new google.maps.InfoWindow({
+			content: "<h1>" + companies.company.name + "</h1>"
+		}); 
+		
+		google.maps.event.addListener(markers[companies.company.name], 'click', function() {
+		  infowindows[companies.company.name].open(map, markers[companies.company.name]);
+		});
+	}
+	
+	$(function loadScript() {
+		var script = document.createElement("script");
+		script.type = "text/javascript";
+		script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";
+		document.body.appendChild(script);
+	
+	});
+	  
+	
+
+%h1 Companies
+
+.map_container
+	#map_canvas(style="height: 500px;")

@@ -65,7 +65,10 @@ Citizenry::Application.routes.draw do
   resources :changes, :controller => 'paper_trail_manager/changes'
   
   match '/about' => 'site#about'
-
+  
+  # Maps
+  resources :maps
+	
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
