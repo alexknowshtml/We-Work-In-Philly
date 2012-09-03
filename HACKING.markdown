@@ -85,3 +85,20 @@ git remote add production git@heroku.com:cold-fog-145.git
 git remote add staging git@heroku.com:shrouded-retreat-7570.git
 git config heroku.remote staging                                                                                                              
 ```
+
+# development process
+```
+# switch to staging branch
+git checkout staging
+
+# push staging branch to origin remote.  Basically publish to github.
+git push origin staging
+
+# fix if somebody deployed to production remote, but never committed to main source tree
+git fetch production
+git merge production/master
+
+# deploy to staging environment, branch is also called staging 
+# -f is normal since this branch is used solely for transport
+git push -f staging staging:master
+```
