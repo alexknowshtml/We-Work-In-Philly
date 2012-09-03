@@ -54,12 +54,13 @@ end
 
   # geocode_or_return Behaves like a databse field, but it's actually dynamic
   def geocode_or_return
+    logger.flush
     logger.debug "================================="
     logger.debug address
     logger.debug "latitude = ->#{self.latitude}<-"
     logger.debug "longitude = ->#{self.longitude}<-"
 
-    if (!self.latitude.nil? && !self.longitude.nil?) || (self.latitude == -1.0 && self.longitude == -1.0)
+    if !self.latitude.nil? && !self.longitude.nil?
       # Lat/Long was already set previously
       logger.debug "CC1: Lat/Long is set"
       return true
@@ -69,8 +70,8 @@ end
       if results.first.nil?
         logger.debug "CC2: Geocoding failed"
         # geocoding failed, use this as a signal value
-        self.latitude = -1.0
-        self.longitude = -1.0
+        self.latitude = nil
+        self.longitude = nil
         self.save!
         return false
       else

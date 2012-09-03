@@ -1,7 +1,7 @@
 # TODO: General
 - Stack: Production is using the bamboo-ree-1.8.7 heroku stack.  Either migrate production to cedar, create a new production environment built from cedar, or create a staging environment with the old stack.  As of 9/1/2012, the staging branch can be deployed to a heroku cedar stack.
 - Make repository public.  Need to permanently sanitize some information.
-- PostgreSQL is required to setup a dev box, but it's not used if you are using the rails development mode (sqlite3 is used instead)
+- PostgreSQL is required to setup a dev box, but you can get away with just sqlite3 (you just can't import production database as easily)
 
 # TODO: Data Sanitization
 1. Change main wwip Amazon API access keys, they were once located here:
@@ -129,6 +129,30 @@ heroku pgbackups:restore DATABASE `heroku pgbackups:url --app cold-fog-145` --ap
 
 # connect to remote database! - make sure it's the right one!!!
 heroku pg:psql
+```
+
+# Local Development - Setup Postgresql
+- Make sure database.yml is setup correctly
+- Make sure database is running
+```
+# DANGEROUS - drop whatever is there
+bundle exec rake db:drop
+
+# create the databases
+bundle exec rake db:create
+
+# migrate them
+bundle exec rake db:migrate
+
+# create the test databases as well
+bundle exec rake db:test:prepare
+
+# do a test via the terminal
+echo "select * from companies" |  psql citizenry_dev
+
+# import production data
+curl -o latest.dump `heroku pgbackups:url --remote=production`
+pg_restore --verbose --clean --no-acl --no-owner -d citizenry_dev latest.dump
 ```
 
 # Local Development - Frequent Operation - Wipe Database
