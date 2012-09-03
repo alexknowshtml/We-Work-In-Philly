@@ -21,7 +21,7 @@
 			});
 				
 			infowindows['<%= company.name.downcase %>'] = new google.maps.InfoWindow({
-				content: "<h2>" + '<%= company.name %>' + "</h2><p>#{company.address}</p>"
+				content: "<h2>" + '<%= company.name %>' + "</h2><p>" + '<%= company.address %>' + "</p>"
 			}); 
 			
 			google.maps.event.addListener(markers['<%= company.name.downcase %>'], 'click', function() {
