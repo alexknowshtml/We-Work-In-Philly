@@ -58,7 +58,7 @@ end
     RAILS_DEFAULT_LOGGER.info address
     RAILS_DEFAULT_LOGGER.info "latitude = #{self.latitude}"
     RAILS_DEFAULT_LOGGER.info "longitude = #{self.longitude}"
-    if (self.latitude && self.longitude) || (self.latitude == -1.0 && self.longitude == -1.0)
+    if (!self.latitude.nil? && !self.longitude.nil?) || (self.latitude == -1.0 && self.longitude == -1.0)
       # Lat/Long was already set previously
       RAILS_DEFAULT_LOGGER.info "CC1: Lat/Long is set"
       return true
@@ -67,7 +67,7 @@ end
       results = Geocoder.search(clean_address)
       if results.first.nil?
         RAILS_DEFAULT_LOGGER.info "CC2: Geocoding failed"
-        # geocoding failed
+        # geocoding failed, use this as a signal value
         self.latitude = -1.0
         self.longitude = -1.0
         self.save!
