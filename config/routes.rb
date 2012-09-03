@@ -68,6 +68,8 @@ Citizenry::Application.routes.draw do
   
   # Maps
   resources :maps
+
+  get 'mapwidget' => 'maps#embed'
 	
   # The priority is based upon order of creation:
   # first created -> highest priority.

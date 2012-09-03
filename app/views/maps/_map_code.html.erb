@@ -12,22 +12,24 @@
 		var markers = [];
 		var infowindows = [];
 		
-<% companies.each_with_index do |company, index| %>
-		
-		<% if company.geocode_or_return %>
-			markers['mark<%= index %>'] = new google.maps.Marker({
-				position: new google.maps.LatLng(<%= company.latitude %>, <%= company.longitude %>)
-				,map: map
-			});
-				
-			infowindows['mark<%= index %>'] = new google.maps.InfoWindow({
-				content: "<h2>" + '<%= escape_javascript(company.name) %>' + "</h2><p>" + '<%= escape_javascript(company.address) %>' + "</p>"
-			}); 
+		<% if ! companies.nil? %>
+			<% companies.each_with_index do |company, index| %>
+			
+			<% if company.geocode_or_return %>
+				markers['mark<%= index %>'] = new google.maps.Marker({
+					position: new google.maps.LatLng(<%= company.latitude %>, <%= company.longitude %>)
+					,map: map
+				});
+					
+				infowindows['mark<%= index %>'] = new google.maps.InfoWindow({
+					content: "<h2>" + '<%= escape_javascript(company.name) %>' + "</h2><p>" + '<%= escape_javascript(company.address) %>' + "</p>"
+				}); 
 
-			google.maps.event.addListener(markers['mark<%= index %>'], 'click', function() {
-			  infowindows['mark<%= index %>'].open(map, markers['mark<%= index %>']);
-			});
+				google.maps.event.addListener(markers['mark<%= index %>'], 'click', function() {
+				  infowindows['mark<%= index %>'].open(map, markers['mark<%= index %>']);
+				});
 
+			<% end %>
 		<% end %>
 		
 <% end %>
