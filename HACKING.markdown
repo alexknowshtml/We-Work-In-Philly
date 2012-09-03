@@ -83,6 +83,8 @@ rvm install ruby-1.8.7-p370 --with-gcc=clang
 git clone git@github.com:alexknowshtml/We-Work-In-Philly.git
 git remote add production git@heroku.com:cold-fog-145.git
 git remote add staging git@heroku.com:shrouded-retreat-7570.git
+
+# IMPORTANT - prevents accidents
 git config heroku.remote staging                                                                                                              
 ```
 
