@@ -1,4 +1,8 @@
-# Installation
+# TODO ITEMS
+- Stack: Production is using the bamboo-ree-1.8.7 heroku stack.  Either migrate production to cedar, create a new production environment built from cedar, or create a staging environment with the old stack.  As of 9/1/2012, the staging branch can be deployed to a heroku cedar stack.
+- Make repository public.  Need to permanently sanitize some information.
+
+# Build box setup
 I needed to use do this gem on install on OSX 10.6
 ```
 sudo env ARCHFLAGS="-arch x86_64" gem install pg
@@ -103,4 +107,16 @@ git merge production/master
 # deploy to staging environment, branch is also called staging 
 # -f is normal since this branch is used solely for transport
 git push -f staging staging:master
+```
+
+# Database Hacking
+```
+# install addon for backups
+heroku addons:add pgbackups:auto-month --app shrouded-retreat-7570
+
+# backup production
+heroku pgbackups:capture --app cold-fog-145
+
+# restore the last snapshot of production to staging
+heroku pgbackups:restore DATABASE `heroku pgbackups:url --app cold-fog-145` --app shrouded-retreat-7570
 ```
