@@ -52,32 +52,33 @@ end
 
   public
 
-  # geocoded?: Behaves like a databse field, but it's actually dynamic
-  def geocoded?
-    RAILS_DEFAULT_LOGGER.info "================================="
-    RAILS_DEFAULT_LOGGER.info address
-    RAILS_DEFAULT_LOGGER.info "latitude = #{self.latitude}"
-    RAILS_DEFAULT_LOGGER.info "longitude = #{self.longitude}"
+  # geocode_or_return Behaves like a databse field, but it's actually dynamic
+  def geocode_or_return
+    logger.debug "================================="
+    logger.debug address
+    logger.debug "latitude = ->#{self.latitude}<-"
+    logger.debug "longitude = ->#{self.longitude}<-"
+
     if (!self.latitude.nil? && !self.longitude.nil?) || (self.latitude == -1.0 && self.longitude == -1.0)
       # Lat/Long was already set previously
-      RAILS_DEFAULT_LOGGER.info "CC1: Lat/Long is set"
+      logger.debug "CC1: Lat/Long is set"
       return true
     else
       # we'll try geocoding it now
       results = Geocoder.search(clean_address)
       if results.first.nil?
-        RAILS_DEFAULT_LOGGER.info "CC2: Geocoding failed"
+        logger.debug "CC2: Geocoding failed"
         # geocoding failed, use this as a signal value
         self.latitude = -1.0
         self.longitude = -1.0
         self.save!
         return false
       else
-        RAILS_DEFAULT_LOGGER.info "CC3: Lat/Long is set"
+        logger.debug "CC3: Lat/Long is set"
         self.latitude = results.first.latitude
         self.longitude = results.first.longitude
-        RAILS_DEFAULT_LOGGER.info "latitude2 = #{latitude}"
-        RAILS_DEFAULT_LOGGER.info "longitude2 = #{longitude}"
+        logger.debug "latitude2 = #{latitude}"
+        logger.debug "longitude2 = #{longitude}"
         self.save!
         return true
       end

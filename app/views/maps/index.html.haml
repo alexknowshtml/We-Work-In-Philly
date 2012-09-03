@@ -1,7 +1,12 @@
 = render :partial => "maps/map_code", :locals => {:companies => @companies} 
 
-
 %h1 Companies
+
+%p= "There are " + @companies.length.to_s + " companies on the map"
+
+%ul
+- @companies.each do |company|
+	%li= company.name + ' (' + company.geocode_or_return.to_s + ' : ' + company.geocoded?.to_s + '): ->' + company.latitude.to_s + '<-,->' + company.longitude.to_s + '<-'
 
 .map_container
 	#map_canvas(style="height: 500px;")

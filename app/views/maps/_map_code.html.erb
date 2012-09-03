@@ -14,7 +14,7 @@
 		
 <% companies.each do |company| %>
 		
-		<% if company.geocoded? %>
+		<% if company.geocode_or_return %>
 			markers['<%= company.name.downcase %>'] = new google.maps.Marker({
 				position: new google.maps.LatLng(<%= company.latitude %>, <%= company.longitude %>)
 				,map: map
