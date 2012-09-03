@@ -1,5 +1,11 @@
+require 'geocoder'
+
 class Company < ActiveRecord::Base
   include SearchEngine
+
+  # adds geocoding
+  geocoded_by :address
+  after_validation :geocode
 
   has_paper_trail :ignore => [:delta]
   acts_as_taggable_on :tags, :technologies
@@ -44,8 +50,39 @@ class Company < ActiveRecord::Base
   end
 end
 
+  public
 
-
+  # geocoded?: Behaves like a databse field, but it's actually dynamic
+  def geocoded?
+    RAILS_DEFAULT_LOGGER.debug "================================="
+    RAILS_DEFAULT_LOGGER.debug address
+    RAILS_DEFAULT_LOGGER.debug "latitude = #{self.latitude}"
+    RAILS_DEFAULT_LOGGER.debug "longitude = #{self.longitude}"
+    if (self.latitude && self.longitude) || (self.latitude == -1.0 && self.longitude == -1.0)
+      # Lat/Long was already set previously
+      RAILS_DEFAULT_LOGGER.debug "CC1: Lat/Long is set"
+      return true
+    else
+      # we'll try geocoding it now
+      results = Geocoder.search(clean_address)
+      if results.first.nil?
+        RAILS_DEFAULT_LOGGER.debug "CC2: Geocoding failed"
+        # geocoding failed
+        self.latitude = -1.0
+        self.longitude = -1.0
+        self.save!
+        return false
+      else
+        RAILS_DEFAULT_LOGGER.debug "CC3: Lat/Long is set"
+        self.latitude = results.first.latitude
+        self.longitude = results.first.longitude
+        RAILS_DEFAULT_LOGGER.debug "latitude2 = #{latitude}"
+        RAILS_DEFAULT_LOGGER.debug "longitude2 = #{longitude}"
+        self.save!
+        return true
+      end
+    end
+  end
 
 # == Schema Information
 #

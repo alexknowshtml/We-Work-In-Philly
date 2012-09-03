@@ -6,8 +6,7 @@ ruby "1.8.7"
 gem 'rails', '3.0.9'
 gem 'rake', '0.9.2'
 
-# Uncomment if you're using sqlite
-# gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'geocoder'
 
 # You may need to add the following to your .bash_profile (or
 # similar):
@@ -94,6 +93,7 @@ group :development, :test do
   gem 'annotate'
   gem "nifty-generators"
   gem 'powder'
+  gem 'sqlite3-ruby', :require => 'sqlite3'
 end
 
 

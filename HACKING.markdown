@@ -1,6 +1,13 @@
-# TODO ITEMS
+# TODO: General
 - Stack: Production is using the bamboo-ree-1.8.7 heroku stack.  Either migrate production to cedar, create a new production environment built from cedar, or create a staging environment with the old stack.  As of 9/1/2012, the staging branch can be deployed to a heroku cedar stack.
 - Make repository public.  Need to permanently sanitize some information.
+- PostgreSQL is required to setup a dev box, but it's not used if you are using the rails development mode (sqlite3 is used instead)
+
+# TODO: Data Sanitization
+1. Change main wwip Amazon API access keys, they were once located here:
+   https://github.com/alexknowshtml/We-Work-In-Philly/blob/master/config/environments/development.rb
+2. https://github.com/alexknowshtml/We-Work-In-Philly/blob/staging/config/twitter_auth.yml
+3. https://github.com/alexknowshtml/We-Work-In-Philly/blob/master/config/settings.yml
 
 # Build box setup
 I needed to use do this gem on install on OSX 10.6
@@ -119,4 +126,19 @@ heroku pgbackups:capture --app cold-fog-145
 
 # restore the last snapshot of production to staging
 heroku pgbackups:restore DATABASE `heroku pgbackups:url --app cold-fog-145` --app shrouded-retreat-7570
+
+# connect to remote database! - make sure it's the right one!!!
+heroku pg:psql
+```
+
+# Local Development - Frequent Operation - Wipe Database
+```
+# drop/clean database - DANGEROUS
+bundle exec rake db:drop
+
+# re-migrate
+bundle exec rake db:migrate
+
+# restart local server
+bundle exec ruby script/rails server
 ```
