@@ -136,16 +136,7 @@ heroku pg:psql
 - Make sure database is running
 ```
 # DANGEROUS - drop whatever is there
-bundle exec rake db:drop
-
-# create the databases
-bundle exec rake db:create
-
-# migrate them
-bundle exec rake db:migrate
-
-# create the test databases as well
-bundle exec rake db:test:prepare
+bundle exec rake db:drop db:create db:migrate db:test:prepare
 
 # do a test via the terminal
 echo "select * from companies" |  psql citizenry_dev
@@ -157,11 +148,8 @@ pg_restore --verbose --clean --no-acl --no-owner -d citizenry_dev latest.dump
 
 # Local Development - Frequent Operation - Wipe Database
 ```
-# drop/clean database - DANGEROUS
-bundle exec rake db:drop
-
-# re-migrate
-bundle exec rake db:migrate
+# clean database - DANGEROUS
+bundle exec rake db:drop db:create db:migrate
 
 # restart local server
 bundle exec ruby script/rails server
