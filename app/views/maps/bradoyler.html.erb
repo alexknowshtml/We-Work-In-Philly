@@ -45,7 +45,7 @@ function initialize() {
       iw = new google.maps.InfoWindow();
       location.Long = <%= company.longitude %>;
       location.Lat = <%= company.latitude %>;
-      location.user_id = <%= index %>;
+      location.user_id = <%= company.id %>;
       location.location = "<%= escape_javascript(company.address) %>";
       location.name = "<%= escape_javascript(company.name) %>";
       location.website = "<%= escape_javascript(company.url) %>";
