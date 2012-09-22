@@ -51,8 +51,6 @@ git checkout staging
 
 # IMPORTANT - prevents accidents
 git config heroku.remote staging                                                                                                              
-```
-
 
 # installs missing dependencies
 bundle install
