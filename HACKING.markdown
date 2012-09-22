@@ -66,8 +66,7 @@ And stop with:
 
 # Start Basic Server
 ```
-# NOTE: Always run through bundle
-
+# Step 1: Set your environment variables, then:
 bundle exec ruby script/rails server
 ```
 
