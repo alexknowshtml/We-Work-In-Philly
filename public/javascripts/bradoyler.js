@@ -36,7 +36,7 @@ function addMarker(location) {
         map: gMap
     });
 
-    var content = "<a href='http://www.weworkinphilly.com/companies/" + location.user_id + "'>" + location.name + "</a>" + "<div>" + location.location + "<br /> <a href=" + location.website + " target='_blank'>" + location.website + "</a> </div><div>Type: " + location.category + "</div>";
+    var content = "<h2>" + location.name + "</h2>" + "<div>" + location.location + "<br /> <a href=" + location.website + " target='_blank'>" + location.website + "</a> </div>";
     createMyInfoWindow(marker, content, gMap);
     markersArray.push(marker);
 }
