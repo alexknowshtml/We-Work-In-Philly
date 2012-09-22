@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>PSL Map</title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<link href="http://www.google.com/uds/css/gsearch.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBJxinfMqFhdPjHPR5dSefcitYycTN526g&sensor=true&region=US"></script>
+<script src="http://www.google.com/uds/api?file=uds.js&amp;v=1.0&amp;key=AIzaSyBJxinfMqFhdPjHPR5dSefcitYycTN526g" type="text/javascript"></script>
+  <script src="/javascripts/lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+
+<script src="/javascripts/bradoyler.js" type="text/javascript"></script>
+</head>
+<body>
+<div style="">
+    Search by City/Zip:
+    <div style="margin-bottom: 3px;">
+        <div>
+            <input type="text" id="queryInput" value="Philadelphia" style="width: 250px;" />
+            <input type="button" value="Find" onclick="doSearch()" />
+        </div>
+    </div>
+   
+    <div id="map" style="width: 100%; height: 600px; border: 1px solid #979797;">
+    </div>
+     <div style=" text-align:center; margin:auto;" id="legend">
+        <ul style="font-size: x-small; list-style: horizontal; list-style: none;">
+            <li style="display: inline;">
+                <input id="GroupA" type="checkbox" value="startup" checked="checked" />
+                <img alt="Startups" src="/images/maps/startup.png" />Startups </li>
+            <li style="display: inline;">
+                <input id="GroupB" type="checkbox" value="accelerator" checked="checked" />
+                <img alt="Accelerators" src="/images/maps/accelerator.png" />Accelerators</li>
+            <li style="display: inline;">
+                <input id="GroupC" type="checkbox" value="incubator" checked="checked" />
+                <img alt="Incubators" src="/images/maps/incubator.png" />Incubators</li>
+            <li style="display: inline;">
+                <input id="GroupD" type="checkbox" value="coworking" checked="checked" />
+                <img alt="Coworking" src="/images/maps/coworking.png" />Coworking</li>
+            <li style="display: inline;">
+                <input id="GroupE" type="checkbox" value="investor" checked="checked" />
+                <img alt="Investors" src="/images/maps/investor.png" />Investors</li>
+            <li style="display: inline;">
+                <input id="GroupF" type="checkbox" value="service" checked="checked" />
+                <img alt="Consulting" src="/images/maps/service.png" />Service</li>
+             <li style="display: inline;">
+                <input id="GroupG" type="checkbox" value="event" checked="checked" />
+                <img alt="Events" src="/images/maps/event.png" />Events</li>
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>
