@@ -38,22 +38,15 @@ function initialize() {
     var myOptions = { zoom: 10, center: myLatlng, styles: mapStyles, mapTypeId: google.maps.MapTypeId.ROADMAP }
     gMap = new google.maps.Map(document.getElementById("map"), myOptions);
 
-<% if ! @companies.nil? %>
-  <% @companies.each_with_index do |company, index| %>
-    <% if company.geocode_or_return %>
-      var location = new Location();
-      iw = new google.maps.InfoWindow();
-      location.Long = <%= company.longitude %>;
-      location.Lat = <%= company.latitude %>;
-      location.user_id = <%= company.id %>;
-      location.location = "<%= escape_javascript(company.address) %>";
-      location.name = "<%= escape_javascript(company.name) %>";
-      location.website = "<%= escape_javascript(company.url) %>";
-      addMarker(location);
-    <% end %>
-  <% end %>
-<% end %>
-
+    $.getJSON("/mapfeed", function (data) {
+        var locations = data;
+        iw = new google.maps.InfoWindow();
+        for (var i = 0; i < locations.length; i++) {
+            var location = locations[i].company;
+            location.category = "startup";
+            addMarker(location);          
+        }
+    });
 }
 </script>
 

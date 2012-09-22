@@ -71,6 +71,7 @@ Citizenry::Application.routes.draw do
 
   get 'mapwidget' => 'maps#embed'
   get 'bradoyler' => 'maps#bradoyler'
+  get 'mapfeed' => 'maps#wwip_json'
 	
   # The priority is based upon order of creation:
   # first created -> highest priority.

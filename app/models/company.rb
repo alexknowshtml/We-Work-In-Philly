@@ -52,7 +52,19 @@ end
 
   public
 
-  # geocode_or_return Behaves like a databse field, but it's actually dynamic
+    # Ghetto json method since the default_serialization_options seem broken
+    def wwip_json(options={})
+      return { :company => { 
+        :user_id => self.id,
+        :Lat => self.latitude,
+        :Long => self.longitude,
+        :location => self.address,
+        :website => self.url,
+        :name => name
+      } }
+    end
+
+  # geocode_or_return Behaves like a db field, but it's actually dynamic
   def geocode_or_return
     logger.flush
     logger.debug "================================="
@@ -84,6 +96,7 @@ end
         return true
       end
     end
+
   end
 
 # == Schema Information

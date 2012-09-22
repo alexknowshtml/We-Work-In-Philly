@@ -22,4 +22,19 @@ class MapsController < ApplicationController
     @companies = Company.all
   end
 
+  # returns the json feed used by the maps
+  def wwip_json
+    @companies = Company.all
+
+    ## The next line should work, but doesn't
+    # render :json => @companies.as_json(:root => false)
+    json = []
+    @companies.each do |company|
+      if company.geocode_or_return
+        json << company.wwip_json
+      end
+    end
+    render :json => json
+  end
+
 end

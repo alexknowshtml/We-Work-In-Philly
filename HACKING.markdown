@@ -2,6 +2,8 @@
 - Stack: Production is using the bamboo-ree-1.8.7 heroku stack.  Either migrate production to cedar, create a new production environment built from cedar, or create a staging environment with the old stack.  As of 9/1/2012, the staging branch can be deployed to a heroku cedar stack.
 - Make repository public.  Need to permanently sanitize some information.
 - PostgreSQL is required to setup a dev box, but you can get away with just sqlite3 (you just can't import production database as easily)
+- Maps should be setup correctly as a resource with appropriate routes
+- Mapfeed is generated manually via json, should just be using Company.as_json method (probably)
 
 # TODO: Data Sanitization
 1. Change main wwip Amazon API access keys, they were once located here:
