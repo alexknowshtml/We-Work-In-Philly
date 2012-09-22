@@ -26,41 +26,6 @@ $(document).ready(function () {
 
 });
 
-function initialize() {
-
-    var mapStyles = [
-         { featureType: "road", elementType: "geometry", stylers: [{ hue: "#8800ff" }, { lightness: 100}] }, {
-           featureType: "road", stylers: [{ visibility: "on" }, { hue: "#91ff00" }, { saturation: -62 }, { gamma: 1.98 }, { lightness: 45}]}, {
-           featureType: "water", stylers: [{ hue: "#005eff" }, { gamma: 0.72 }, { lightness: 42}]}, { 
-           featureType: "transit.line", stylers: [{ visibility: "on" }]}, {
-           featureType: "administrative.locality", stylers: [ { visibility: "on" }]}, {
-           featureType: "administrative.neighborhood", elementType: "geometry",stylers: [{ visibility: "simplified" }]}, {
-           featureType: "landscape",stylers: [{ visibility: "on" },{ gamma: 0.41 },{ lightness: 46 }]}, {
-           featureType: "administrative.neighborhood", elementType: "labels.text", stylers: [{ visibility: "on" }, { saturation: 33 }, { lightness: 20}]
-         }
-        ];
-
-    var myLatlng = new google.maps.LatLng(39.951904,-75.158597);
-
-    // Initialize the local searcher
-    gLocalSearch = new GlocalSearch();
-    gLocalSearch.setSearchCompleteCallback(null, OnLocalSearch);
-
-    var myOptions = { zoom: 11, center: myLatlng, styles: mapStyles, mapTypeId: google.maps.MapTypeId.ROADMAP }
-    gMap = new google.maps.Map(document.getElementById("map"), myOptions);
-
- //   $.getJSON("http://bradoyler.github.com/mapdata.json?callback=?", function (data) {
-    $.getJSON("/javascripts/bradoyler.json", function (data) {
-        var locations = data;
-
-        iw = new google.maps.InfoWindow();
-        for (var i = 0; i < locations.length; i++) {
-            var location = locations[i].company;
-
-                addMarker(location);          
-        }
-    });
-}
 
 function addMarker(location) {
     var latlong = new google.maps.LatLng(parseFloat(location.Lat), parseFloat(location.Long));

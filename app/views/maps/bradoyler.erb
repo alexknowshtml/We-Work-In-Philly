@@ -16,6 +16,61 @@
 <script src="/javascripts/bradoyler.js" type="text/javascript"></script>
 </head>
 <body>
+
+<script type="text/javascript">
+
+function Location() {
+  this.user_id = 1;
+  this.name = "Unknown";
+  this.location = "Unknown";
+  this.website = "Unknown";
+  this.category = "startup";
+  this.Long = 39.955741;
+  this.Lat = -75.176289;
+}
+
+function initialize() {
+
+    var mapStyles = [
+         { featureType: "road", elementType: "geometry", stylers: [{ hue: "#8800ff" }, { lightness: 100}] }, {
+           featureType: "road", stylers: [{ visibility: "on" }, { hue: "#91ff00" }, { saturation: -62 }, { gamma: 1.98 }, { lightness: 45}]}, {
+           featureType: "water", stylers: [{ hue: "#005eff" }, { gamma: 0.72 }, { lightness: 42}]}, { 
+           featureType: "transit.line", stylers: [{ visibility: "on" }]}, {
+           featureType: "administrative.locality", stylers: [ { visibility: "on" }]}, {
+           featureType: "administrative.neighborhood", elementType: "geometry",stylers: [{ visibility: "simplified" }]}, {
+           featureType: "landscape",stylers: [{ visibility: "on" },{ gamma: 0.41 },{ lightness: 46 }]}, {
+           featureType: "administrative.neighborhood", elementType: "labels.text", stylers: [{ visibility: "on" }, { saturation: 33 }, { lightness: 20}]
+         }
+        ];
+
+    var myLatlng = new google.maps.LatLng(39.951904,-75.158597);
+
+    // Initialize the local searcher
+    gLocalSearch = new GlocalSearch();
+    gLocalSearch.setSearchCompleteCallback(null, OnLocalSearch);
+
+    var myOptions = { zoom: 11, center: myLatlng, styles: mapStyles, mapTypeId: google.maps.MapTypeId.ROADMAP }
+    gMap = new google.maps.Map(document.getElementById("map"), myOptions);
+
+<% if ! @companies.nil? %>
+  <% @companies.each_with_index do |company, index| %>
+    <% if company.geocode_or_return %>
+      var location = new Location();
+      iw = new google.maps.InfoWindow();
+      location.Long = <%= company.longitude %>;
+      location.Lat = <%= company.latitude %>;
+      location.user_id = <%= index %>;
+      location.location = "<%= escape_javascript(company.address) %>";
+      location.name = "<%= escape_javascript(company.name) %>";
+      location.website = "<%= escape_javascript(company.url) %>";
+      addMarker(location);
+    <% end %>
+  <% end %>
+<% end %>
+
+}
+</script>
+
 <div style="">
     Search by City/Zip:
     <div style="margin-bottom: 3px;">
