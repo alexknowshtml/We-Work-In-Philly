@@ -128,8 +128,9 @@ heroku pgbackups:capture --app cold-fog-145
 heroku pgbackups:restore DATABASE `heroku pgbackups:url --app cold-fog-145` --app shrouded-retreat-7570
 
 # connect to remote database! - make sure it's the right one!!!
-heroku pg:psql
+heroku pg:psql --app shrouded-retreat-7570
 ```
+
 
 # Local Development - Setup Postgresql
 - Make sure database.yml is setup correctly
@@ -153,4 +154,14 @@ bundle exec rake db:drop db:create db:migrate
 
 # restart local server
 bundle exec ruby script/rails server
+```
+
+# Restart heroku server
+```
+heroku pg:restart --app shrouded-retreat-7570
+```
+
+# Switch databases (needed if you upgrade from freemium databaase to store >10k records)
+```
+heroku pg:promote HEROKU_POSTGRESQL_IVORY
 ```
