@@ -17,3 +17,5 @@ log/searchd.development.pid
 .\#*
 .DS_Store
 *.swp
+config/settings.yml
+config/database.yml
