@@ -16,5 +16,13 @@ class MapsController < ApplicationController
 	# turn-off the layout
 	render :layout => false
   end
-  
+
+  # The page created by bradoyler
+  def bradoyler
+    @companies = Company.all
+
+	# turn-off the layout
+	render :layout => false
+  end
+
 end

@@ -1,0 +1,47 @@
+[
+{ 
+  "company": {           
+     "user_id": 3, 
+     "name": "test 3", 
+     "Lat": 39.951904, 
+     "Long": -75.118597, 
+     "location": "Philadelphia, PA 19102", 
+     "website": "http://ourwebsite.com", 
+     "category": "startup" 
+   } 
+},
+{ 
+   "company": { 
+     "user_id": 4, 
+     "name": "test 4", 
+     "Lat": 39.952914, 
+     "Long": -75.128597, 
+     "location": "Philadelphia", 
+     "website": "http://ourwebsite.com",
+     "category": "startup" 
+   } 
+},
+{ "company": { "user_id": 5, "name": "test 5", "Lat": 39.953924, "Long": -75.138597, "location": "Philadelphia", "website": "http://ourwebsite.com", "Zip": "19102", "category": "startup"} },
+{ "company": { "user_id": 6, "name": "test 6", "Lat": 39.954934, "Long": -75.148597, "location": "Philadelphia", "website": "http://ourwebsite.com", "Zip": "19102", "category": "startup"} },
+{ "company": { "user_id": 7, "name": "test 7", "Lat": 39.955944, "Long": -75.158597, "location": "Philadelphia", "website": "http://ourwebsite.com", "Zip": "19102", "category": "startup"} },
+{ "company": { "user_id": 8, "name": "test 8", "Lat": 39.956954, "Long": -75.168597, "location": "Philadelphia", "website": "http://ourwebsite.com", "Zip": "19102", "category": "startup"} },
+{ "company": { "user_id": 9, "name": "test 9", "Lat": 39.957964, "Long": -75.178597, "location": "Philadelphia", "website": "http://ourwebsite.com", "Zip": "19102", "category": "startup"} },
+{ "company": { "user_id": 10, "name": "test 10", "Lat": 39.958974, "Long": -75.178597, "location": "Philadelphia", "website": "http://ourwebsite.com", "Zip": "19102", "category": "startup"} },
+{ "company": { "user_id": 11, "name": "Mid Atlantic", "Lat": 39.951904, "Long": -75.158597, "location": "Philadelphia", "website": "http://ourwebsite.com", "Zip": "19102", "category": "startup"} },
+{ "company": { "user_id": 12, "name": "Northeast Allocation", "Lat": 39.951904, "Long": -75.158597, "location": "Philadelphia", "website": "http://ourwebsite.com", "category": "startup"} },
+{ "company": { "user_id": 13, "name": "Morgan, Lewis & Bockius - west", "Lat": 39.953339, "Long": -75.168715, "location": "Philadelphia", "website": "http://ourwebsite.com", "category": "service"} },
+{ "company": { "user_id": 14, "name": "Morgan, Lewis & Bockius", "Lat": 39.9531865, "Long": -75.1749671, "location": "Philadelphia", "website": "http://ourwebsite.com", "category": "service"} },
+{ "company": { "user_id": 15, "name": "AF&SS GP", "Lat": 39.951904, "Long": -75.158597, "location": "Philadelphia", "website": "http://ourwebsite.com", "category": "service"} },
+{ "company": { "user_id": 16, "name": "West Chester Univ.", "Lat": 39.9516708, "Long": -75.6040849, "location": "WEST CHESTER, PA", "website": "http://ourwebsite.com", "category": "service"} },
+{ "company": { "user_id": 19, "name": "Keystone Mercy Health Plan", "Lat": 39.8646796, "Long": -75.2742261, "location": "Philadelphia", "website": "http://ourwebsite.com", "category": "service"} },
+{ "company": { "user_id": 20, "name": "Awesome Inc", "Lat": 39.9509036, "Long": -75.1574567, "location": "Philadelphia", "website": "http://ourwebsite.com", "category": "service"} },
+{ "company": { "user_id": 21, "name": "W3Portals, LLC", "Lat": 39.9509036, "Long": -75.1574567, "location": "Philadelphia", "website": "http://ourwebsite.com", "category": "service"} },
+{ "company": { "user_id": 22, "name": "Belmont Behavioral Health", "Lat": 39.9996099, "Long": -75.2155669, "location": "Philadelphia", "website": "http://ourwebsite.com", "category": "investor"} },
+{ "company": { "user_id": 23, "name": "Amtrak", "Lat": 39.951904, "Long": -75.158597, "location": "Philadelphia", "website": "http://ourwebsite.com", "category": "investor"} },
+{ "company": { "user_id": 24, "name": "St Josephs Prep - Comp", "Lat": 39.97219, "Long": -75.164784, "location": "Philadelphia", "website": "http://ourwebsite.com", "category": "investor"} },
+{ "company": { "user_id": 25, "name": "PA School for the Deaf", "Lat": 40.032672, "Long": -75.1743814, "location": "Philadelphia", "website": "http://ourwebsite.com", "category": "investor"} },
+{ "company": { "user_id": 26, "name": "Benjamin's Desk", "Lat": 39.951904, "Long": -75.158597, "location": "Philadelphia", "website": "http://ourwebsite.com", "category": "coworking"} },
+{ "company": { "user_id": 27, "name": "Venturef0rth", "Lat": 40.004546, "Long": -75.152788, "location": "Philadelphia", "website": "http://ourwebsite.com", "category": "coworking"} },
+{ "company": { "user_id": 28, "name": "Novotorium", "Lat": 39.951904, "Long": -75.158597, "location": "Philadelphia", "website": "http://ourwebsite.com", "category": "coworking"} },
+{ "company": { "user_id": 29, "name": "SeedPhilly", "Lat": 39.951904, "Long": -75.158597, "location": "Philadelphia", "website": "http://ourwebsite.com", "category": "coworking"} },
+{ "company": { "user_id": 30, "name": "IndyHall", "Lat": 39.951904, "Long": -75.158597, "location": "Philadelphia", "website": "http://ourwebsite.com", "category": "coworking"}}]

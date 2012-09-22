@@ -70,6 +70,7 @@ Citizenry::Application.routes.draw do
   resources :maps
 
   get 'mapwidget' => 'maps#embed'
+  get 'bradoyler' => 'maps#bradoyler'
 	
   # The priority is based upon order of creation:
   # first created -> highest priority.
