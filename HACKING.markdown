@@ -1,23 +1,24 @@
 # TODO: General
-- Stack: Production is using the bamboo-ree-1.8.7 heroku stack.  Either migrate production to cedar, create a new production environment built from cedar, or create a staging environment with the old stack.  As of 9/1/2012, the staging branch can be deployed to a heroku cedar stack.
-- Make repository public.  Need to permanently sanitize some information.
-- PostgreSQL is required to setup a dev box, but you can get away with just sqlite3 (you just can't import production database as easily)
-- Maps should be setup correctly as a resource with appropriate routes
-- Mapfeed is generated manually via json, should just be using Company.as_json method (probably)
+1. Making sure all staging -> production issues worked out.  Production is using the bamboo-ree-1.8.7 heroku stack.  Either migrate production to cedar, create a new production environment built from cedar, or create a staging environment with the old stack.  As of 9/1/2012, the staging branch can be deployed to a heroku cedar stack.
+2. Make repository public.  Need to permanently sanitize some information.
+3. Figure out why top navigation screwed up on the staging site (some kind of CSS issue)
+4. Widget updated with new aesthetic
+5. Categories implemented
+6. Maps should be setup correctly as a resource with appropriate routes
+7. Mapfeed is generated manually via json, should just be using Company.as_json method (probably)
 
 # TODO: Data Sanitization
-1. Change main wwip Amazon API access keys, they were once located here:
-   https://github.com/alexknowshtml/We-Work-In-Philly/blob/master/config/environments/development.rb
-2. https://github.com/alexknowshtml/We-Work-In-Philly/blob/staging/config/twitter_auth.yml
+1. https://github.com/alexknowshtml/We-Work-In-Philly/blob/master/config/environments/development.rb
+2. https://github.com/alexknowshtml/We-Work-In-Philly/blob/master/config/twitter_auth.yml
 3. https://github.com/alexknowshtml/We-Work-In-Philly/blob/master/config/settings.yml
 
 # Development Box Setup
 Check out this too, but it is newer than the version of citizenry we forked from:
-  https://github.com/reidab/citizenry/blob/master/INSTALL.md
+- https://github.com/reidab/citizenry/blob/master/INSTALL.md
 
 PostgreSQL installation and upgrade procedures:
-  http://www.postgresql.org/docs/9.1/static/install-procedure.html
-  http://www.postgresql.org/docs/9.1/static/upgrading.html
+- http://www.postgresql.org/docs/9.1/static/install-procedure.html
+- http://www.postgresql.org/docs/9.1/static/upgrading.html
 
 ```
 # I needed to use do this gem on install on OSX 10.6
@@ -26,7 +27,7 @@ sudo env ARCHFLAGS="-arch x86_64" gem install pg
 # Install Postgresql - I do not remember if I specified the 32-bit
 brew install postgresql --32-bit
 
-# Start PostgreSQL (see below), can use sqlite as alternative
+# Start PostgreSQL (see below for instructions).  PostgreSQL is not required to setup a dev box, but then cannot import production database as easily
 
 # Create database
 initdb /usr/local/var/postgres
