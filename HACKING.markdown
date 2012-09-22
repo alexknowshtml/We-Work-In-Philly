@@ -136,6 +136,7 @@ heroku pg:psql --app shrouded-retreat-7570
 # Local Development - Setup Postgresql
 - Make sure database.yml is setup correctly
 - Make sure database is running
+- Then check out:
 ```
 # DANGEROUS - drop whatever is there
 bundle exec rake db:drop db:create db:migrate db:test:prepare
