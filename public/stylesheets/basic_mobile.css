@@ -76,33 +76,33 @@
 
 /* line 86, ../../app/stylesheets/_mixins.sass */
 .external_link, a.external, #content .single_record .links a {
-  background-image: url('/images/sanscons_16/arrow1_e.png?1316553724');
+  background-image: url('/images/sanscons_16/arrow1_e.png?1307471097');
 }
 
 /* line 90, ../../app/stylesheets/_mixins.sass */
 .edit_link, .delete_link, form.formtastic .buttons .delete, a.delete, #content .single_record .delete, #content .single_record .edit {
   background-color: #666666;
-  background-image: url('/images/sanscons_16/edit.png?1316553724');
+  background-image: url('/images/sanscons_16/edit.png?1307471097');
 }
 
 /* line 95, ../../app/stylesheets/_mixins.sass */
 .delete_link, form.formtastic .buttons .delete, a.delete, #content .single_record .delete {
-  background-image: url('/images/sanscons_16/trash.png?1316553724');
+  background-image: url('/images/sanscons_16/trash.png?1307471097');
 }
 
 /* line 99, ../../app/stylesheets/_mixins.sass */
 .feed_link, .changes_feed a {
   background-color: #e6a74d;
-  background-image: url('/images/sanscons_16/wifi.png?1316553724');
+  background-image: url('/images/sanscons_16/wifi.png?1307471097');
 }
 
 /* line 104, ../../app/stylesheets/_mixins.sass */
 .claim_link, #content .resource_list li a.claim, #content .single_record #claim_user .claim {
   background-color: #82c555;
-  background-image: url('/images/sanscons_16/check.png?1316553724');
+  background-image: url('/images/sanscons_16/check.png?1307471097');
 }
 
-/* line 14, ../../../../.rvm/gems/ruby-1.8.7-p352@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 14, ../../../../.rvm/gems/ruby-1.8.7-p334@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -122,42 +122,42 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   vertical-align: baseline;
 }
 
-/* line 17, ../../../../.rvm/gems/ruby-1.8.7-p352@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../.rvm/gems/ruby-1.8.7-p334@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 body {
   line-height: 1;
   color: black;
   background: white;
 }
 
-/* line 19, ../../../../.rvm/gems/ruby-1.8.7-p352@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 19, ../../../../.rvm/gems/ruby-1.8.7-p334@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 21, ../../../../.rvm/gems/ruby-1.8.7-p352@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 21, ../../../../.rvm/gems/ruby-1.8.7-p334@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: separate;
   border-spacing: 0;
   vertical-align: middle;
 }
 
-/* line 23, ../../../../.rvm/gems/ruby-1.8.7-p352@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 23, ../../../../.rvm/gems/ruby-1.8.7-p334@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 25, ../../../../.rvm/gems/ruby-1.8.7-p352@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 25, ../../../../.rvm/gems/ruby-1.8.7-p334@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: "" "";
 }
-/* line 96, ../../../../.rvm/gems/ruby-1.8.7-p352@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 96, ../../../../.rvm/gems/ruby-1.8.7-p334@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
 }
 
-/* line 27, ../../../../.rvm/gems/ruby-1.8.7-p352@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 27, ../../../../.rvm/gems/ruby-1.8.7-p334@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
@@ -277,16 +277,16 @@ body {
 
 /* line 7, ../../app/stylesheets/_type.sass */
 a {
-  color: #0093d3;
+  color: #556677;
   text-decoration: none;
 }
 /* line 10, ../../app/stylesheets/_type.sass */
 a:visited {
-  color: #006fa0;
+  color: #5577bb;
 }
 /* line 12, ../../app/stylesheets/_type.sass */
 a:active {
-  color: #07b4ff;
+  color: #5577bb;
 }
 /* line 14, ../../app/stylesheets/_type.sass */
 a:hover {
@@ -999,14 +999,14 @@ a.delete {
 a.join {
   color: white;
   background-color: #82c555;
-  background-image: url('/images/sanscons_16/add.png?1316553724');
+  background-image: url('/images/sanscons_16/add.png?1307471097');
 }
 
 /* line 57, ../../app/stylesheets/basic_mobile.sass */
 a.leave {
   color: white;
   background-color: #ef6c7b;
-  background-image: url('/images/sanscons_16/bstop.png?1316553724');
+  background-image: url('/images/sanscons_16/bstop.png?1307471097');
 }
 
 /* line 64, ../../app/stylesheets/basic_mobile.sass */
@@ -1035,7 +1035,7 @@ body.site_index .home_marker {
 }
 /* line 77, ../../app/stylesheets/basic_mobile.sass */
 #header h1 a span {
-  color: #86c9d7;
+  color: #884444;
 }
 /* line 79, ../../app/stylesheets/basic_mobile.sass */
 #header h1 a .home_marker {
@@ -1259,7 +1259,7 @@ body.events #content {
   font-weight: bold;
   font-size: 26px;
 }
-/* line 11, ../../../../.rvm/gems/ruby-1.8.7-p352@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_bullets.scss */
+/* line 11, ../../../../.rvm/gems/ruby-1.8.7-p334@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_bullets.scss */
 #front_nav li {
   list-style-image: none;
   list-style-type: none;
@@ -1398,11 +1398,11 @@ body.events #content {
 }
 /* line 281, ../../app/stylesheets/basic_mobile.sass */
 #content .section_header #view_options .sorting a.current.asc {
-  background-image: url('/images/sanscons_16/arrow2_s.png?1316553724');
+  background-image: url('/images/sanscons_16/arrow2_s.png?1307471097');
 }
 /* line 283, ../../app/stylesheets/basic_mobile.sass */
 #content .section_header #view_options .sorting a.current.desc {
-  background-image: url('/images/sanscons_16/arrow2_n.png?1316553724');
+  background-image: url('/images/sanscons_16/arrow2_n.png?1307471097');
 }
 /* line 287, ../../app/stylesheets/basic_mobile.sass */
 #content .section_header.people a.new {
@@ -1454,7 +1454,7 @@ body.events #content {
   list-style: none;
   margin: 0;
 }
-/* line 11, ../../../../.rvm/gems/ruby-1.8.7-p352@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_bullets.scss */
+/* line 11, ../../../../.rvm/gems/ruby-1.8.7-p334@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_bullets.scss */
 #content .resource_list li {
   list-style-image: none;
   list-style-type: none;
@@ -1525,7 +1525,7 @@ body.events #content {
   list-style: none;
   margin: 0 0 1em 0;
 }
-/* line 11, ../../../../.rvm/gems/ruby-1.8.7-p352@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_bullets.scss */
+/* line 11, ../../../../.rvm/gems/ruby-1.8.7-p334@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_bullets.scss */
 #content .resource_grid li {
   list-style-image: none;
   list-style-type: none;
@@ -1695,7 +1695,7 @@ body.events #content {
   margin-top: 0.5em;
   padding-top: 0.5em;
 }
-/* line 11, ../../../../.rvm/gems/ruby-1.8.7-p352@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_bullets.scss */
+/* line 11, ../../../../.rvm/gems/ruby-1.8.7-p334@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_bullets.scss */
 #content #user_home #authentications ul li {
   list-style-image: none;
   list-style-type: none;
@@ -1741,7 +1741,7 @@ body.events #content {
 /* line 523, ../../app/stylesheets/basic_mobile.sass */
 #content #users_admin a.make_admin {
   background-color: #ae6bdd;
-  background-image: url('/images/sanscons_16/bigsmile.png?1316553724');
+  background-image: url('/images/sanscons_16/bigsmile.png?1307471097');
 }
 
 /* line 530, ../../app/stylesheets/basic_mobile.sass */
@@ -1826,38 +1826,38 @@ body.events #content {
 
 /* line 586, ../../app/stylesheets/basic_mobile.sass */
 .auth_backgrounded.twitter, #content #people_search_results li.twitter, .auth_providers a.twitter {
-  background-image: url('/images/authbuttons/twitter_32.png?1316553724');
+  background-image: url('/images/authbuttons/twitter_32.png?1307471097');
 }
 /* line 588, ../../app/stylesheets/basic_mobile.sass */
 .auth_backgrounded.open_id, #content #people_search_results li.open_id, .auth_providers a.open_id {
-  background-image: url('/images/authbuttons/open_id_32.png?1316553724');
+  background-image: url('/images/authbuttons/open_id_32.png?1307471097');
 }
 /* line 590, ../../app/stylesheets/basic_mobile.sass */
 .auth_backgrounded.google, #content #people_search_results li.google, .auth_providers a.google {
-  background-image: url('/images/authbuttons/google_32.png?1316553724');
+  background-image: url('/images/authbuttons/google_32.png?1307471097');
 }
 /* line 592, ../../app/stylesheets/basic_mobile.sass */
 .auth_backgrounded.facebook, #content #people_search_results li.facebook, .auth_providers a.facebook {
-  background-image: url('/images/authbuttons/facebook_32.png?1316553724');
+  background-image: url('/images/authbuttons/facebook_32.png?1307471097');
 }
 /* line 594, ../../app/stylesheets/basic_mobile.sass */
 .auth_backgrounded.linked_in, #content #people_search_results li.linked_in, .auth_providers a.linked_in {
-  background-image: url('/images/authbuttons/linked_in_32.png?1316553724');
+  background-image: url('/images/authbuttons/linked_in_32.png?1307471097');
 }
 /* line 596, ../../app/stylesheets/basic_mobile.sass */
 .auth_backgrounded.github, #content #people_search_results li.github, .auth_providers a.github {
-  background-image: url('/images/authbuttons/github_32.png?1316553724');
+  background-image: url('/images/authbuttons/github_32.png?1307471097');
 }
 /* line 598, ../../app/stylesheets/basic_mobile.sass */
 .auth_backgrounded.yahoo, #content #people_search_results li.yahoo, .auth_providers a.yahoo {
-  background-image: url('/images/authbuttons/yahoo_32.png?1316553724');
+  background-image: url('/images/authbuttons/yahoo_32.png?1307471097');
 }
 
 /* line 601, ../../app/stylesheets/basic_mobile.sass */
 .auth_providers {
   list-style: none;
 }
-/* line 11, ../../../../.rvm/gems/ruby-1.8.7-p352@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_bullets.scss */
+/* line 11, ../../../../.rvm/gems/ruby-1.8.7-p334@citizenry/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_bullets.scss */
 .auth_providers li {
   list-style-image: none;
   list-style-type: none;
