@@ -1,11 +1,10 @@
 class MapsController < ApplicationController
-  # GET /items
-  # GET /items.json
-  def index
+
+  def old
     @companies = Company.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
     end
   end
 
@@ -17,8 +16,8 @@ class MapsController < ApplicationController
 	render :layout => false
   end
 
-  # The page created by bradoyler
-  def bradoyler
+  # The page originally created by bradoyler
+  def index
     @companies = Company.all
   end
 

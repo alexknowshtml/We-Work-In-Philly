@@ -70,8 +70,10 @@ Citizenry::Application.routes.draw do
   resources :maps
 
   get 'mapwidget' => 'maps#embed'
-  get 'bradoyler' => 'maps#bradoyler'
   get 'mapfeed' => 'maps#wwip_json'
+
+  # makes map and maps equivalent
+  get 'map' => 'maps#index'
 	
   # The priority is based upon order of creation:
   # first created -> highest priority.

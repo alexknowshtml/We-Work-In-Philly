@@ -52,7 +52,7 @@ function initialize() {
 
 <h1>Companies</h1>
 
-<p>There are <%=@companies.length.to_s %> companies on the map!  Jump to a city/zip by typing into the box below.</p>
+<p>There are <%=@companies.length.to_s %> with registered addresses!  Jump to a city/zip by typing into the box below.</p>
 
 <div style="">
     <div style="margin-bottom: 3px;">
@@ -63,30 +63,5 @@ function initialize() {
     </div>
    
     <div id="map" style="width: 100%; height: 500px; border: 1px solid #979797;">
-    </div>
-     <div style=" text-align:center; margin:auto;" id="legend">
-        <ul style="font-size: x-small; list-style: horizontal; list-style: none;">
-            <li style="display: inline;">
-                <input id="GroupA" type="checkbox" value="startup" checked="checked" />
-                <img alt="Startups" src="/images/maps/startup.png" />Startups </li>
-            <li style="display: inline;">
-                <input id="GroupB" type="checkbox" value="accelerator" checked="checked" />
-                <img alt="Accelerators" src="/images/maps/accelerator.png" />Accelerators</li>
-            <li style="display: inline;">
-                <input id="GroupC" type="checkbox" value="incubator" checked="checked" />
-                <img alt="Incubators" src="/images/maps/incubator.png" />Incubators</li>
-            <li style="display: inline;">
-                <input id="GroupD" type="checkbox" value="coworking" checked="checked" />
-                <img alt="Coworking" src="/images/maps/coworking.png" />Coworking</li>
-            <li style="display: inline;">
-                <input id="GroupE" type="checkbox" value="investor" checked="checked" />
-                <img alt="Investors" src="/images/maps/investor.png" />Investors</li>
-            <li style="display: inline;">
-                <input id="GroupF" type="checkbox" value="service" checked="checked" />
-                <img alt="Consulting" src="/images/maps/service.png" />Service</li>
-             <li style="display: inline;">
-                <input id="GroupG" type="checkbox" value="event" checked="checked" />
-                <img alt="Events" src="/images/maps/event.png" />Events</li>
-        </ul>
     </div>
 </div>
