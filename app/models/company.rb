@@ -1,5 +1,11 @@
+require 'geocoder'
+
 class Company < ActiveRecord::Base
   include SearchEngine
+
+  # adds geocoding
+  geocoded_by :address
+  after_validation :geocode
 
   has_paper_trail :ignore => [:delta]
   acts_as_taggable_on :tags, :technologies
@@ -9,7 +15,7 @@ class Company < ActiveRecord::Base
   friendly_id :name, :use => :slugged
   has_attached_file :logo, :styles => { :medium => '220x220', :thumb => '48x48' }, 
     :storage => :s3,
-    :bucket => 'weworkinphilly',
+    :bucket => ENV['S3_BUCKET'],
     :s3_credentials => {
       :access_key_id => ENV['S3_KEY'],
       :secret_access_key => ENV['S3_SECRET']
@@ -44,8 +50,54 @@ class Company < ActiveRecord::Base
   end
 end
 
+  public
 
+    # Ghetto json method since the default_serialization_options seem broken
+    def wwip_json(options={})
+      return { :company => { 
+        :user_id => self.id,
+        :Lat => self.latitude,
+        :Long => self.longitude,
+        :location => self.address,
+        :website => self.url,
+        :name => name
+      } }
+    end
 
+  # geocode_or_return Behaves like a db field, but it's actually dynamic
+  def geocode_or_return
+    logger.flush
+    logger.debug "================================="
+    logger.debug address
+    logger.debug "latitude = ->#{self.latitude}<-"
+    logger.debug "longitude = ->#{self.longitude}<-"
+
+    if !self.latitude.nil? && !self.longitude.nil?
+      # Lat/Long was already set previously
+      logger.debug "CC1: Lat/Long is set"
+      return true
+    else
+      # we'll try geocoding it now
+      results = Geocoder.search(clean_address)
+      if results.first.nil?
+        logger.debug "CC2: Geocoding failed"
+        # geocoding failed, use this as a signal value
+        self.latitude = nil
+        self.longitude = nil
+        self.save!
+        return false
+      else
+        logger.debug "CC3: Lat/Long is set"
+        self.latitude = results.first.latitude
+        self.longitude = results.first.longitude
+        logger.debug "latitude2 = #{latitude}"
+        logger.debug "longitude2 = #{longitude}"
+        self.save!
+        return true
+      end
+    end
+
+  end
 
 # == Schema Information
 #

@@ -29,7 +29,8 @@ class SearchEngine::Sql < SearchEngine::Base
         conditions = [conditions_text, {:like_query => "%#{query.downcase}%"}]
 
         results = self.all(:conditions => conditions, :order => order, :limit => limit)
-        results = results.paginate(pagination_options) unless pagination_options.empty?
+        # Temporary fix for search
+        # results = results.paginate(pagination_options) unless pagination_options.empty?
 
         return results
       end

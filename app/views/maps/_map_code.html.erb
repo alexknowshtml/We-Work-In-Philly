@@ -1,9 +1,9 @@
 <script type="text/javascript">
 
 	function initialize() {
-		var myLatlng = new google.maps.LatLng(39.9654,-75.1425);
+		var myLatlng = new google.maps.LatLng(39.955741,-75.176289);
 		var myOptions = {
-			zoom: 12
+			zoom: 10
 			,center: myLatlng
 			,mapTypeId: google.maps.MapTypeId.ROADMAP
 		}
@@ -12,22 +12,24 @@
 		var markers = [];
 		var infowindows = [];
 		
-<% companies.each do |company| %>
-		
-		<% if company.latitude && company.longitude %>
-			markers['<%= company.name.downcase %>'] = new google.maps.Marker({
-				position: new google.maps.LatLng(<%= company.latitude %>, <%= company.longitude %>)
-				,map: map
-			});
-				
-			infowindows['<%= company.name.downcase %>'] = new google.maps.InfoWindow({
-				content: "<h2>" + '<%= company.name %>' + "</h2><p>#{company.address}</p>"
-			}); 
+		<% if ! companies.nil? %>
+			<% companies.each_with_index do |company, index| %>
 			
-			google.maps.event.addListener(markers['<%= company.name.downcase %>'], 'click', function() {
-			  infowindows['<%= company.name.downcase %>'].open(map, markers['<%= company.name.downcase %>']);
-			});
-		
+			<% if company.geocode_or_return %>
+				markers['mark<%= index %>'] = new google.maps.Marker({
+					position: new google.maps.LatLng(<%= company.latitude %>, <%= company.longitude %>)
+					,map: map
+				});
+					
+				infowindows['mark<%= index %>'] = new google.maps.InfoWindow({
+					content: "<h2>" + '<%= escape_javascript(company.name) %>' + "</h2><p>" + '<%= escape_javascript(company.address) %>' + "</p>"
+				}); 
+
+				google.maps.event.addListener(markers['mark<%= index %>'], 'click', function() {
+				  infowindows['mark<%= index %>'].open(map, markers['mark<%= index %>']);
+				});
+
+			<% end %>
 		<% end %>
 		
 <% end %>

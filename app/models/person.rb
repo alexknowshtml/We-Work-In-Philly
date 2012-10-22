@@ -20,7 +20,7 @@ class Person < ActiveRecord::Base
 
   has_attached_file :photo, :styles => { :medium => '220x220#', :thumb => '48x48#' },
   :storage => :s3,
-  :bucket => 'weworkinphilly',
+  :bucket => ENV['S3_BUCKET'],
   :s3_credentials => {
     :access_key_id => ENV['S3_KEY'],
     :secret_access_key => ENV['S3_SECRET']
@@ -30,7 +30,7 @@ class Person < ActiveRecord::Base
   attr_accessor :photo_import_url
   before_validation do
     if self.photo_import_url.present?
-      url = self.photo_import_url.downcase
+      url = self.photo_import_url
       url = "http://#{url}" unless url.include?("http")
 
       io = open(URI.parse(url))

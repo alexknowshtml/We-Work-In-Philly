@@ -1,7 +1,8 @@
 = render :partial => "maps/map_code", :locals => {:companies => @companies} 
 
-
 %h1 Companies
+
+%p= "There are " + @companies.length.to_s + " companies on the map!"
 
 .map_container
 	#map_canvas(style="height: 500px;")

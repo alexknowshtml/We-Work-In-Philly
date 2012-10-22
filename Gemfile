@@ -1,10 +1,13 @@
 source 'http://rubygems.org'
 
+# Required since new heroku staging environment defaults to v1.9.2p290
+ruby "1.8.7"
+
 gem 'rails', '3.0.9'
 gem 'rake', '0.9.2'
 
-# Uncomment if you're using sqlite
-gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'geocoder'
+
 # You may need to add the following to your .bash_profile (or
 # similar):
 #
@@ -51,9 +54,11 @@ gem "responders", "~> 0.6.2"
 gem 'acts-as-taggable-on', "~> 2.0.6"
 
 gem 'paper_trail', '~> 2'
-gem 'paper_trail_manager', :git => 'https://github.com/graybill/paper_trail_manager.git'
 
-# gem 'paper_trail_manager', :path => '../paper_trail_manager'
+# This was graybill's, but it broke build b/c of dependency on bundle-1.0.0.
+# This was updated this to the origin of graybill's repository.
+
+gem 'paper_trail_manager', :git => 'https://github.com/igal/paper_trail_manager.git'
 
 
 #--[ View ]---------------------------------------------------------------------
@@ -88,6 +93,7 @@ group :development, :test do
   gem 'annotate'
   gem "nifty-generators"
   gem 'powder'
+  gem 'sqlite3-ruby', :require => 'sqlite3'
 end
 
 
