@@ -1,0 +1,33 @@
+# environent-specific settings will be deep merged with the common hash, overriding values therein
+
+common:
+  providers:
+    - twitter
+    - linked_in
+  auth_credentials:
+    twitter:
+      key: "<%= ENV['TWITTER_KEY'] %>"
+      secret: "<%= ENV['TWITTER_SECRET'] %>"
+    facebook:
+      key: "<%= ENV['FACEBOOK_KEY'] %>"
+      secret: "<%= ENV['FACEBOOK_SECRET'] %>"
+    linked_in:
+      key: "<%= ENV['LINKEDIN_KEY'] %>"
+      secret: "<%= ENV['LINKEDIN_SECRET'] %>"
+    github:
+      key: "<%= ENV['GITHUB_KEY'] %>"
+      secret: "<%= ENV['GITHUB_SECRET'] %>"
+  google_analytics_id: <your id>
+  hoptoad: seekrit!
+  secret_token: "<%= ENV['APP_SECRET'] %>"
+  organization:
+    name: WeWorkInPhilly
+    city: Philadelphia
+    state: PA
+    url: http://weworkinphilly.org
+    twitter: weWorkInPhilly
+    email: alex@indyhall.org
+    host: Heroku
+    host_url: http://heroku.com
+    logotype: <span>we</span>WorkInPhilly
+  search: sql
