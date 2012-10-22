@@ -52,16 +52,9 @@ function initialize() {
 
 <h1>Companies</h1>
 
-<p>There are <%=@companies.length.to_s %> with registered addresses!  Jump to a city/zip by typing into the box below.</p>
+<p>
+<a href="/companies/new">Add your company</a> to include it on this map!  
+There are currently <%=@companies.length.to_s %> companies registered with valid street addresses.
+</p>
 
-<div style="">
-    <div style="margin-bottom: 3px;">
-        <div>
-            <input type="text" id="queryInput" value="Philadelphia" style="width: 250px;" />
-            <input type="button" value="Find" onclick="doSearch()" />
-        </div>
-    </div>
-   
-    <div id="map" style="width: 100%; height: 500px; border: 1px solid #979797;">
-    </div>
-</div>
+<div id="map" style="width: 100%; height: 500px; border: 1px solid #979797;"></div>
