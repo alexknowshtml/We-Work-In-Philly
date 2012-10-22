@@ -127,7 +127,7 @@ git push -f staging staging:master
 ## Commands and Maintenance
 ```
 # Restart heroku server
-heroku pg:restart --app shrouded-retreat-7570
+heroku ps:restart --app shrouded-retreat-7570
 
 # Switch databases (needed if you upgrade from freemium databaase to store >10k records)
 heroku pg:promote HEROKU_POSTGRESQL_IVORY
@@ -146,4 +146,14 @@ heroku pg:psql --app shrouded-retreat-7570
 
 # restore the last snapshot of production to staging
 heroku pgbackups:restore DATABASE `heroku pgbackups:url --app cold-fog-145` --app shrouded-retreat-7570
+```
+
+# Create your own app
+```
+$ heroku apps:create
+```
+
+# Maintenance Mode
+```
+heroku maintenance:on --app cold-fog-145
 ```
