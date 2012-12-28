@@ -1,4 +1,16 @@
 GIT
+  remote: https://github.com/apscott/twitter.git
+  revision: 11d37a19cc683c21887008c2a71ae6d504ef0212
+  specs:
+    twitter (1.6.0)
+      faraday (~> 0.6.1)
+      faraday_middleware (~> 0.6.3)
+      hashie (~> 1.0.0)
+      multi_json (~> 1.0.0)
+      multi_xml (~> 0.2.0)
+      simple_oauth (~> 0.1.5)
+
+GIT
   remote: https://github.com/igal/paper_trail_manager.git
   revision: 4622a940673c5390ae05be1cd6ec5dac773e7e59
   specs:
@@ -290,13 +302,6 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    twitter (1.6.0)
-      faraday (~> 0.6.1)
-      faraday_middleware (~> 0.6.3)
-      hashie (~> 1.0.0)
-      multi_json (~> 1.0.0)
-      multi_xml (~> 0.2.0)
-      simple_oauth (~> 0.1.5)
     tzinfo (0.3.29)
     utility_belt (1.1.0)
       Platform (>= 0.4.0)
@@ -366,7 +371,7 @@ DEPENDENCIES
   spork
   sqlite3-ruby
   steak (= 1.1.0)
-  twitter (~> 1.6.0)
+  twitter (~> 1.6.0)!
   utility_belt
   uuid
   will_paginate (~> 3.0.beta)

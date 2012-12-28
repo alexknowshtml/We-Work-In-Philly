@@ -37,7 +37,7 @@ gem 'ruby-openid', '~> 2.1.8'
 gem 'net-dns', '~> 0.6.1', :require => 'net/dns/resolver'
 
 # Client libraries for authenticated services
-gem 'twitter', '~> 1.6.0'
+gem 'twitter', '~> 1.6.0', :git => "https://github.com/apscott/twitter.git"
 gem 'linkedin', '~> 0.2.2', :git => "https://github.com/pengwynn/linkedin.git", :tag => 'v0.2.2'
 gem 'mogli', '~>0.0.25', :git => "https://github.com/reidab/mogli.git" # facebook
 gem 'foursquare2', '~>1.1.0'   # https://gist.github.com/419219 <- github oauth docs!
