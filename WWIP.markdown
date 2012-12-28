@@ -75,7 +75,20 @@ And stop with:
   pg_ctl -D /usr/local/var/postgres stop -s -m fast
 ```
 
+##Create a Database Migration
+To add a column to a table, use database migrations. Generate a migration using the following with the appropriate table and column names:
 
+```
+  rails generate migration AddNumberOfEmployeesToCompanies number\_of\_employees:integer
+```
+
+The above command will create a file in db/migrate. Then migrate the db with:
+
+```
+  bundle exec rake db:migrate
+```
+
+The new column should now be in the db and model. More information on migrations can be found [here.](http://guides.rubyonrails.org/migrations.html#creating-a-standalone-migration)
 
 
 
