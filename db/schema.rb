@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110819175731) do
+ActiveRecord::Schema.define(:version => 20121221181601) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -36,10 +36,12 @@ ActiveRecord::Schema.define(:version => 20110819175731) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
-    t.boolean  "delta",             :default => true, :null => false
+    t.boolean  "delta",               :default => true, :null => false
     t.float    "latitude"
     t.float    "longitude"
     t.string   "slug"
+    t.integer  "number_of_employees"
+    t.integer  "revenue"
   end
 
   add_index "companies", ["slug"], :name => "index_companies_on_slug", :unique => true

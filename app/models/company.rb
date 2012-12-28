@@ -60,7 +60,8 @@ end
         :Long => self.longitude,
         :location => self.address,
         :website => self.url,
-        :name => name
+        :name => name,
+        :category => 'startup'
       } }
     end
 
