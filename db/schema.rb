@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121221181601) do
+ActiveRecord::Schema.define(:version => 20121228201340) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -42,6 +42,12 @@ ActiveRecord::Schema.define(:version => 20121221181601) do
     t.string   "slug"
     t.integer  "number_of_employees"
     t.integer  "revenue"
+    t.string   "customer1"
+    t.string   "customer_url1"
+    t.string   "customer2"
+    t.string   "customer_url2"
+    t.string   "customer3"
+    t.string   "customer_url3"
   end
 
   add_index "companies", ["slug"], :name => "index_companies_on_slug", :unique => true

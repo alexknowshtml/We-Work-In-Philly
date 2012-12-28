@@ -6,6 +6,25 @@
     = f.input :description
     = f.input :tag_list, :as => :text, :label => 'Tags (industries, topics, etc)', :hint => "Comma separated, please", :input_html => {:class => 'tags'}
     = f.input :technology_list, :as => :text, :label => 'Technologies used (languages, frameworks, etc)', :hint => "Comma separated, please", :input_html => {:class => 'tags'}
+
+    %table{:border => "1"}
+      %tbody
+        %tr
+          %td
+            = f.input :customer1, :as => :string, :label => 'Customer 1'
+          %td
+            = f.input :customer_url1, :as => :string, :label => 'Customer 1 Website (optional)'
+        %tr
+          %td
+            = f.input :customer2, :as => :string, :label => 'Customer 2'
+          %td
+            = f.input :customer_url2, :as => :string, :label => 'Customer 2 Website (optional)'
+        %tr
+          %td
+            = f.input :customer3, :as => :string, :label => 'Customer 3'
+          %td
+            = f.input :customer_url3, :as => :string, :label => 'Customer 3 Website (optional)'
+
     = f.input :number_of_employees, :as => :string
     = f.input :revenue, :as => :string
     - if @company.logo.file?
