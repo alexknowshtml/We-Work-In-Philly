@@ -16,7 +16,11 @@ $(document).ready(function () {
         }
         else {
             for (i in markersArray) {
-                if (markersArray[i].title == this.value) {
+                if (markersArray[i].title.indexOf(this.value) > -1) {
+                    var currentIcon = markersArray[i].icon.split("/")[3].split(".")[0];
+                    if(markersArray[i].title.indexOf(this.value) < markersArray[i].title.indexOf(currentIcon)) {
+                        markersArray[i].icon = '/images/maps/' + this.value + '.png';
+                    }
                     markersArray[i].animation = google.maps.Animation.DROP;
                     markersArray[i].setMap(gMap);
                 }
@@ -28,11 +32,12 @@ $(document).ready(function () {
 
 
 function addMarker(location) {
+
     var latlong = new google.maps.LatLng(parseFloat(location.Lat), parseFloat(location.Long));
     marker = new google.maps.Marker({
         position: latlong,
         title: location.category,
-        icon: '/images/maps/' + location.category + '.png',
+        icon: '/images/maps/' + location.category.split(",")[0] + '.png',
         map: gMap
     });
 
@@ -43,8 +48,39 @@ function addMarker(location) {
 
 function clearOverlay(category) {
     if (markersArray) {
+        //Get all the checked checkboxes
+        var inputs = document.getElementsByTagName("input");
+        var checked = [];
+        for (i in inputs) {  
+            if (inputs[i].type == "checkbox" && inputs[i].checked) {  
+                checked.push(inputs[i]);
+            }  
+        }
+
+        //Go through all of the markers
         for (i in markersArray) {
-            if (markersArray[i].title == category) markersArray[i].setMap();
+            //If the given marker is in the category that was just unchecked
+            if (markersArray[i].title.indexOf(category) > -1) {
+                
+                //Go through and make sure the marker isn't in another category that is still checked
+                var inAnotherCategory = false;
+                var otherCategoryIndex = Number.POSITIVE_INFINITY;
+                for(c in checked) {
+                    var foundIndex = markersArray[i].title.indexOf(checked[c].value);
+                    if(foundIndex > -1 && foundIndex < otherCategoryIndex) {
+                        inAnotherCategory = true;
+                        otherCategoryIndex = foundIndex;
+                        markersArray[i].icon = '/images/maps/' + checked[c].value + '.png';
+                        markersArray[i].animation = google.maps.Animation.DROP;
+                        markersArray[i].setMap(gMap);
+                    }
+                }
+
+                //If it's not in any checked category, clear it.
+                if(!inAnotherCategory) {
+                    markersArray[i].setMap();
+                }
+            }
         }
     }
 }

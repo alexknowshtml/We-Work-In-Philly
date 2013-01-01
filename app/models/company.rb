@@ -104,34 +104,34 @@ end
     categories = ""
     tags.each do |tag|
       if tag.name.downcase == "startup"
-        categories = "startup, "
+        categories = categories + "startup,"
       end
       if tag.name.downcase == "company"
-        categories = "company, "
+        categories = categories + "company,"
       end
       if tag.name.downcase == "accelerator"
-        categories = "accelerator, "
+        categories = categories + "accelerator,"
       end
       if tag.name.downcase == "investor"
-        categories = "investor, "
+        categories = categories + "investor,"
       end
       if tag.name.downcase == "coworking"
-        categories = "coworking, "
+        categories = categories + "coworking,"
       end
       if tag.name.downcase == "organization"
-        categories = "organization, "
+        categories = categories + "organization,"
       end
       if tag.name.downcase == "service"
-        categories = "service, "
+        categories = categories + "service,"
       end
       if tag.name.downcase == "event"
-        categories = "event, "
+        categories = categories + "event,"
       end
     end
     if categories.length < 1
       return "company"
     else
-      return categories[0, categories.length-2]
+      return categories[0, categories.length-1]
     end
   end
 
