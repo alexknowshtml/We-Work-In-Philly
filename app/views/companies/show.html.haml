@@ -31,18 +31,24 @@
       - if @company.customer1.present?
         - if @company.customer_url1.present?
           = link_to @company.customer1, @company.customer_url1
+          != "<br/>"
         - else
           = @company.customer1
+          != "<br/>"
       - if @company.customer2.present?
         - if @company.customer_url2.present?
           = link_to @company.customer2, @company.customer_url2
+          != "<br/>"
         - else
           = @company.customer2
+          != "<br/>"
       - if @company.customer3.present?
         - if @company.customer_url3.present?
           = link_to @company.customer3, @company.customer_url3
+          != "<br/>"
         - else
           = @company.customer3
+          != "<br/>"
 
   - if @company.revenue.present? && @company.revenue > 100000000
     .section.revenue
