@@ -4,7 +4,7 @@
     = f.input :url, :label => 'Website'
     = f.input :address, :as => :string, :hint => "e.g. 20 N 3rd St, Philadelphia PA, 19106"
     = f.input :description
-    = f.input :tag_list, :as => :text, :label => 'Tags (industries, topics, etc).  Please use all of the map-powered tags that apply:  company, accelerator, investor, coworking, startup, organization, service, event', :hint => "Comma separated, please", :input_html => {:class => 'tags'}
+    = f.input :tag_list, :as => :text, :label => 'Tags (industries, topics, etc).  Please use all of the <b>map-powered</b> tags that apply:  company, accelerator, investor, coworking, startup, organization, service, event'.html_safe, :hint => "Comma separated, please", :input_html => {:class => 'tags'}
     = f.input :technology_list, :as => :text, :label => 'Technologies used (languages, frameworks, etc)', :hint => "Comma separated, please", :input_html => {:class => 'tags'}
 
     %table{:border => "1"}
