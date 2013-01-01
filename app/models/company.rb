@@ -61,7 +61,7 @@ end
         :location => self.address,
         :website => self.url,
         :name => name,
-        :category => 'startup'
+        :category => get_categories_from_tags
       } }
     end
 
@@ -98,6 +98,41 @@ end
       end
     end
 
+  end
+
+  def get_categories_from_tags
+    categories = ""
+    tags.each do |tag|
+      if tag.name.downcase == "startup"
+        categories = "startup, "
+      end
+      if tag.name.downcase == "company"
+        categories = "company, "
+      end
+      if tag.name.downcase == "accelerator"
+        categories = "accelerator, "
+      end
+      if tag.name.downcase == "investor"
+        categories = "investor, "
+      end
+      if tag.name.downcase == "coworking"
+        categories = "coworking, "
+      end
+      if tag.name.downcase == "organization"
+        categories = "organization, "
+      end
+      if tag.name.downcase == "service"
+        categories = "service, "
+      end
+      if tag.name.downcase == "event"
+        categories = "event, "
+      end
+    end
+    if categories.length < 1
+      return "company"
+    else
+      return categories[0, categories.length-2]
+    end
   end
 
 # == Schema Information

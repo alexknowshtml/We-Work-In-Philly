@@ -51,35 +51,35 @@
   - elsif @company.revenue.present? && @company.revenue > 50000000
     .section.revenue
       %h2 Revenue
-      = "$50,000,000-100,000,000"
+      = "$50,000,000-$100,000,000"
   - elsif @company.revenue.present? && @company.revenue > 5000000
     .section.revenue
       %h2 Revenue
-      = "$5,000,000-50,000,000"
+      = "$5,000,000-$50,000,000"
   - elsif @company.revenue.present? && @company.revenue > 1000000
     .section.revenue
       %h2 Revenue
-      = "$1,000,000-5,000,000"
+      = "$1,000,000-$5,000,000"
   - elsif @company.revenue.present? && @company.revenue > 500000
     .section.revenue
       %h2 Revenue
-      = "$500,000-1,000,000"
+      = "$500,000-$1,000,000"
   - elsif @company.revenue.present? && @company.revenue > 100000
     .section.revenue
       %h2 Revenue
-      = "$100,000-500,000"
+      = "$100,000-$500,000"
   - elsif @company.revenue.present? && @company.revenue > 50000
     .section.revenue
       %h2 Revenue
-      = "$50,000-100,000"
+      = "$50,000-$100,000"
   - elsif @company.revenue.present? && @company.revenue > 100
     .section.revenue
       %h2 Revenue
-      = "$100-50,000"
+      = "$100-$50,000"
   - elsif @company.revenue.present? && @company.revenue > 0
     .section.revenue
       %h2 Revenue
-      = "$0-100"
+      = "$0-$100"
 
 
   - if @company.number_of_employees.present? && @company.number_of_employees > 10000
