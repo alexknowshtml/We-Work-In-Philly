@@ -79,7 +79,7 @@ And stop with:
 To add a column to a table, use database migrations. Generate a migration using the following with the appropriate table and column names:
 
 ```
-  rails generate migration AddNumberOfEmployeesToCompanies number\_of\_employees:integer
+  rails generate migration AddNumberOfEmployeesToCompanies number_of_employees:integer
 ```
 
 The above command will create a file in db/migrate. Then migrate the db with:

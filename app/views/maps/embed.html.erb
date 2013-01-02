@@ -54,17 +54,67 @@
         var myOptions = { zoom: 10, center: myLatlng, styles: mapStyles, mapTypeId: google.maps.MapTypeId.ROADMAP }
         gMap = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
-        $.getJSON("/mapfeed", function (data) {
-            var locations = data;
-            iw = new google.maps.InfoWindow();
-            for (var i = 0; i < locations.length; i++) {
-                var location = locations[i].company;
-                addMarker(location);          
-            }
-        });
+        //Get the location from the URL parameters. If a location is specified, filter for it.
+        var loc = "";
+        var locIndex = document.URL.indexOf("loc=");
+        if(locIndex > -1) {
+            loc = document.URL.substr(locIndex);
+            loc = loc.replace("loc=","");
+            loc = loc.split("&")[0];
+
+            $.getJSON("/mapfeed", function (data) {
+                var locations = data;
+                iw = new google.maps.InfoWindow();
+                for (var i = 0; i < locations.length; i++) {
+                    var location = locations[i].company;
+                    if(location.location.toLowerCase().indexOf(loc.toLowerCase()) > -1) {
+                        addMarker(location);
+                    }
+                }
+            });
+        } else {
+            $.getJSON("/mapfeed", function (data) {
+                var locations = data;
+                iw = new google.maps.InfoWindow();
+                for (var i = 0; i < locations.length; i++) {
+                    var location = locations[i].company;
+                    addMarker(location);          
+                }
+            });
+        }
     }
     </script>
 
-      <div id='map_canvas' style='height:100%;width:100%'></div>
+      <div id='map_canvas' style='height:92%;width:100%'></div>
+
+<div style=" text-align:center; margin:auto;" id="legend">
+    <ul style="font-size: x-small; list-style: horizontal; list-style: none;">
+        <li style="display: inline;">
+            <input id="GroupH" type="checkbox" value="company" checked="checked" />
+            Companies<img alt="Companies" src="images/maps/company.png" /> || </li>
+        <li style="display: inline;">
+            <input id="GroupA" type="checkbox" value="startup" checked="checked" />
+            Startups<img alt="Startups" src="images/maps/startup.png" /> || </li>
+        <li style="display: inline;">
+            <input id="GroupB" type="checkbox" value="accelerator" checked="checked" />
+            Accelerators<img alt="Accelerators" src="images/maps/accelerator.png" /> || </li>
+        <li style="display: inline;">
+            <input id="GroupC" type="checkbox" value="organization" checked="checked" />
+            Organizations<img alt="Organizations" src="images/maps/organization.png" /> || </li>
+        <li style="display: inline;">
+            <input id="GroupD" type="checkbox" value="coworking" checked="checked" />
+            Coworking<img alt="Coworking" src="images/maps/coworking.png" /> || </li>
+        <li style="display: inline;">
+            <input id="GroupE" type="checkbox" value="investor" checked="checked" />
+            Investors<img alt="Investors" src="images/maps/investor.png" /> || </li>
+        <li style="display: inline;">
+            <input id="GroupF" type="checkbox" value="service" checked="checked" />
+            Services<img alt="Consulting" src="images/maps/service.png" /> || </li>
+        <li style="display: inline;">
+            <input id="GroupG" type="checkbox" value="event" checked="checked" />
+            Events<img alt="Events" src="images/maps/event.png" /></li>
+    </ul>
+</div>
+
   </body>
 </html>

@@ -54,12 +54,22 @@ end
 
     # Ghetto json method since the default_serialization_options seem broken
     def wwip_json(options={})
+      
+      #These conditionals are to fix a minor bug where websites lacking
+      #http:// at the beginning were trying to link locally and hence were broken
+      if self.url[0,3] == 'www'
+        self.url = 'http://' + self.url
+      end
+      if self.jobs_url != nil && self.jobs_url[0,3] == 'www'
+        self.jobs_url = 'http://' + self.jobs_url
+      end
       return { :company => { 
         :user_id => self.id,
         :Lat => self.latitude,
         :Long => self.longitude,
         :location => self.address,
         :website => self.url,
+        :jobs => self.jobs_url,
         :name => name,
         :category => get_categories_from_tags
       } }

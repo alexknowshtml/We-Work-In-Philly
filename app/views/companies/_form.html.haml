@@ -2,6 +2,7 @@
   = f.inputs do
     = f.input :name
     = f.input :url, :label => 'Website'
+    = f.input :jobs_url, :label => 'Jobs Page URL'
     = f.input :address, :as => :string, :hint => "e.g. 20 N 3rd St, Philadelphia PA, 19106"
     = f.input :description
     = f.input :tag_list, :as => :text, :label => 'Tags (industries, topics, etc).  Please use all of the <b>map-powered</b> tags that apply:  company, accelerator, investor, coworking, startup, organization, service, event'.html_safe, :hint => "Comma separated, please", :input_html => {:class => 'tags'}

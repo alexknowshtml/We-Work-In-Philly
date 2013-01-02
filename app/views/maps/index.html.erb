@@ -38,14 +38,34 @@ function initialize() {
     var myOptions = { zoom: 10, center: myLatlng, styles: mapStyles, mapTypeId: google.maps.MapTypeId.ROADMAP }
     gMap = new google.maps.Map(document.getElementById("map"), myOptions);
 
-    $.getJSON("/mapfeed", function (data) {
-        var locations = data;
-        iw = new google.maps.InfoWindow();
-        for (var i = 0; i < locations.length; i++) {
-            var location = locations[i].company;
-            addMarker(location);          
-        }
-    });
+    //Get the location from the URL parameters. If a location is specified, filter for it.
+    var loc = "";
+    var locIndex = document.URL.indexOf("loc=");
+    if(locIndex > -1) {
+        loc = document.URL.substr(locIndex);
+        loc = loc.replace("loc=","");
+        loc = loc.split("&")[0];
+
+        $.getJSON("/mapfeed", function (data) {
+            var locations = data;
+            iw = new google.maps.InfoWindow();
+            for (var i = 0; i < locations.length; i++) {
+                var location = locations[i].company;
+                if(location.location.toLowerCase().indexOf(loc.toLowerCase()) > -1) {
+                    addMarker(location);
+                }
+            }
+        });
+    } else {
+        $.getJSON("/mapfeed", function (data) {
+            var locations = data;
+            iw = new google.maps.InfoWindow();
+            for (var i = 0; i < locations.length; i++) {
+                var location = locations[i].company;
+                addMarker(location);          
+            }
+        });
+    }
 }
 </script>
 
