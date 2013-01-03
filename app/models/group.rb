@@ -31,10 +31,71 @@ class Group < ActiveRecord::Base
   has_many :companies, :through => :sponsorships
 
   validates_presence_of :name
+
+  def clean_address
+    if address.nil?
+      return address
+    end
+    return address.gsub(" ", "+").gsub(",", "")
+  end
+
+  # Ghetto json method since the default_serialization_options seem broken
+  def wwip_json(options={})
+
+    #This conditional is to fix a minor bug where websites lacking
+    #http:// at the beginning were trying to link locally and hence were broken
+    if self.url[0,3] == 'www'
+      self.url = 'http://' + self.url
+    end
+    return { :company => { 
+      :user_id => self.id,
+      :Lat => self.latitude,
+      :Long => self.longitude,
+      :location => self.address,
+      :website => self.url,
+      :jobs => nil,
+      :name => name,
+      :category => get_categories_from_tags
+    } }
+  end
+
+
+  def get_categories_from_tags
+    categories = ""
+    tags.each do |tag|
+      if tag.name.downcase == "startup"
+        categories = categories + "startup,"
+      end
+      if tag.name.downcase == "company"
+        categories = categories + "company,"
+      end
+      if tag.name.downcase == "accelerator"
+        categories = categories + "accelerator,"
+      end
+      if tag.name.downcase == "investor"
+        categories = categories + "investor,"
+      end
+      if tag.name.downcase == "coworking"
+        categories = categories + "coworking,"
+      end
+      if tag.name.downcase == "organization"
+        categories = categories + "organization,"
+      end
+      if tag.name.downcase == "service"
+        categories = categories + "service,"
+      end
+      if tag.name.downcase == "event"
+        categories = categories + "event,"
+      end
+    end
+    if categories.length < 1
+      return "organization"
+    else
+      return categories[0, categories.length-1]
+    end
+  end
+
 end
-
-
-
 
 # == Schema Information
 #

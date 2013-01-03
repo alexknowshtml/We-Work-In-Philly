@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130102212255) do
+ActiveRecord::Schema.define(:version => 20130103003238) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -99,6 +99,9 @@ ActiveRecord::Schema.define(:version => 20130102212255) do
     t.datetime "logo_updated_at"
     t.boolean  "delta",             :default => true, :null => false
     t.string   "slug"
+    t.text     "address"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "groups", ["slug"], :name => "index_groups_on_slug", :unique => true

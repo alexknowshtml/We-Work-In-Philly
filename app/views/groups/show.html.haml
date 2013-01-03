@@ -1,6 +1,8 @@
 .single_record.group{:class => @group.logo.file? ? 'with_image' : 'without_image'}
   = image_tag(@group.logo.url(:medium), :class => 'logo') if @group.logo.file?
   %h1= @group.name
+  - if @group.address.present?
+    .location= @group.address
   - if @group.description.present?
     .description= simple_format @group.description
   - if @group.meeting_info.present?

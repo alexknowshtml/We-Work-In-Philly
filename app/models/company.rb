@@ -48,6 +48,42 @@ class Company < ActiveRecord::Base
   def google_maps_link
     "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=#{clean_address}"
   end
+
+  def get_categories_from_tags
+    categories = ""
+    tags.each do |tag|
+      if tag.name.downcase == "startup"
+        categories = categories + "startup,"
+      end
+      if tag.name.downcase == "company"
+        categories = categories + "company,"
+      end
+      if tag.name.downcase == "accelerator"
+        categories = categories + "accelerator,"
+      end
+      if tag.name.downcase == "investor"
+        categories = categories + "investor,"
+      end
+      if tag.name.downcase == "coworking"
+        categories = categories + "coworking,"
+      end
+      if tag.name.downcase == "organization"
+        categories = categories + "organization,"
+      end
+      if tag.name.downcase == "service"
+        categories = categories + "service,"
+      end
+      if tag.name.downcase == "event"
+        categories = categories + "event,"
+      end
+    end
+    if categories.length < 1
+      return "company"
+    else
+      return categories[0, categories.length-1]
+    end
+  end
+
 end
 
   public
@@ -108,41 +144,6 @@ end
       end
     end
 
-  end
-
-  def get_categories_from_tags
-    categories = ""
-    tags.each do |tag|
-      if tag.name.downcase == "startup"
-        categories = categories + "startup,"
-      end
-      if tag.name.downcase == "company"
-        categories = categories + "company,"
-      end
-      if tag.name.downcase == "accelerator"
-        categories = categories + "accelerator,"
-      end
-      if tag.name.downcase == "investor"
-        categories = categories + "investor,"
-      end
-      if tag.name.downcase == "coworking"
-        categories = categories + "coworking,"
-      end
-      if tag.name.downcase == "organization"
-        categories = categories + "organization,"
-      end
-      if tag.name.downcase == "service"
-        categories = categories + "service,"
-      end
-      if tag.name.downcase == "event"
-        categories = categories + "event,"
-      end
-    end
-    if categories.length < 1
-      return "company"
-    else
-      return categories[0, categories.length-1]
-    end
   end
 
 # == Schema Information
