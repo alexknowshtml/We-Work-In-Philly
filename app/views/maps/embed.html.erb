@@ -82,11 +82,23 @@
                 }
             });
         }
+
+        var categories = "";
+        var categoriesIndex = document.URL.indexOf("categories=");
+        if(categoriesIndex) {
+            categories = document.URL.substr(categoriesIndex);
+            categories = categories.replace("categories=","");
+            categories = categories.split("&")[0];
+            if(categories == "false") {
+                document.getElementById("legend").style.display="none";
+                document.getElementById("map_canvas").style.height="100%";
+            }
+        }
     }
     </script>
 
     <div style=" text-align:center; margin:auto;" id="legend">
-        <a href="http://weworkinphilly.com/">Visit WeWorkInPhilly</a>
+        <!--a href="http://weworkinphilly.com/">Visit WeWorkInPhilly</a-->
         <ul style="font-size: x-small; list-style: horizontal; list-style: none;">
             <li style="display: inline;">
                 <input id="GroupH" type="checkbox" value="company" checked="checked" />
