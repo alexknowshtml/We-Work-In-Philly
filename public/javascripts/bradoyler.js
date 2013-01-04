@@ -44,7 +44,7 @@ function addMarker(location) {
     var content = "<a style='font-size:22px; font-family: LeagueGothicRegular' href='/companies/" + location.user_id + "'>" + location.name + "</a><div>" + location.location + "<br /> <a href=" + location.website + " target='_blank'>" + location.website + "</a> ";
 
     if(location.jobs != null) {
-        content = content + "<a href=" + location.jobs + " target='_blank'>[Get a Job]</a> ";
+        content = content + "<a href=" + location.jobs + " target='_blank'>[Get a job here]</a> ";
     }
     content = content + "</div>";
     createMyInfoWindow(marker, content, gMap);

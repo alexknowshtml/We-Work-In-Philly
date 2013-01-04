@@ -10,6 +10,8 @@
   .links
     - if @company.url.present?
       =link_to normalize_url(@company.url), normalize_url(@company.url), :class => 'url'
+    - if @company.jobs_url.present?
+      =link_to 'Get a job here', normalize_url(@company.jobs_url), :class => 'url'
 
   .record_actions
     = link_to 'Edit', edit_company_path(@company), :class => 'edit'
