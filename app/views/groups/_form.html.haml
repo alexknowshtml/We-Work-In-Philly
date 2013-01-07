@@ -7,6 +7,36 @@
     = f.input :description
     = f.input :meeting_info
     = f.input :tag_list, :as => :text, :label => 'Tags', :hint => "Comma separated, please", :input_html => {:class => 'tags'}
+
+    = f.label 'Categories'
+    = f.check_box :is_company
+    Company
+    %img(src="/images/maps/company.png")
+    ||
+    = f.check_box :is_startup
+    Startup
+    %img(src="/images/maps/startup.png")
+    ||
+    = f.check_box :is_accelerator
+    Accelerator
+    %img(src="/images/maps/accelerator.png")
+    ||
+    = f.check_box :is_organization
+    Organization
+    %img(src="/images/maps/organization.png")
+    ||
+    = f.check_box :is_coworking
+    Coworking
+    %img(src="/images/maps/coworking.png")
+    ||
+    = f.check_box :is_investor
+    Investor
+    %img(src="/images/maps/investor.png")
+    ||
+    = f.check_box :is_service
+    Service
+    %img(src="/images/maps/service.png")
+
     = f.input :technology_list, :as => :text, :label => 'Technologies (languages, frameworks, etc)', :hint => "Comma separated, please", :input_html => {:class => 'tags'}
     - if @group.logo.file?
       %li

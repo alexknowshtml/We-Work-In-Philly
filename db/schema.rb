@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130103003238) do
+ActiveRecord::Schema.define(:version => 20130107233826) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(:version => 20130103003238) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "slug"
-    t.integer  "number_of_employees"
-    t.integer  "revenue"
+    t.string   "number_of_employees"
+    t.string   "revenue"
     t.string   "customer1"
     t.string   "customer_url1"
     t.string   "customer2"
@@ -49,6 +49,13 @@ ActiveRecord::Schema.define(:version => 20130103003238) do
     t.string   "customer3"
     t.string   "customer_url3"
     t.string   "jobs_url"
+    t.boolean  "is_accelerator"
+    t.boolean  "is_company"
+    t.boolean  "is_coworking"
+    t.boolean  "is_investor"
+    t.boolean  "is_organization"
+    t.boolean  "is_service"
+    t.boolean  "is_startup"
   end
 
   add_index "companies", ["slug"], :name => "index_companies_on_slug", :unique => true
@@ -102,6 +109,13 @@ ActiveRecord::Schema.define(:version => 20130103003238) do
     t.text     "address"
     t.float    "latitude"
     t.float    "longitude"
+    t.boolean  "is_accelerator"
+    t.boolean  "is_company"
+    t.boolean  "is_coworking"
+    t.boolean  "is_investor"
+    t.boolean  "is_organization"
+    t.boolean  "is_service"
+    t.boolean  "is_startup"
   end
 
   add_index "groups", ["slug"], :name => "index_groups_on_slug", :unique => true

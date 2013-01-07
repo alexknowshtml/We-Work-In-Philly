@@ -1,3 +1,5 @@
+-@number_of_employees_options = ['','1-10','11-50','51-200','201-1,000','1,001-5,000','5,001-10,000','10,001+']
+-@revenue_options = ['','$0-$100','$100-$50,000','$50,000-$100,000','$100,000-$500,000','$500,000-$1,000,000','$1,000,000-$5,000,000','$5,000,000-$50,000,000','$50,000,000-$100,000,000','$100,000,000+']
 = semantic_form_for(@company, :html => {:multipart => true}) do |f|
   = f.inputs do
     = f.input :name
@@ -5,7 +7,37 @@
     = f.input :jobs_url, :label => 'Jobs Page URL'
     = f.input :address, :as => :string, :hint => "e.g. 20 N 3rd St, Philadelphia PA, 19106"
     = f.input :description
-    = f.input :tag_list, :as => :text, :label => 'Tags (industries, topics, etc).  Please use all of the <b>map-powered</b> tags that apply:  company, accelerator, investor, coworking, startup, organization, service, event'.html_safe, :hint => "Comma separated, please", :input_html => {:class => 'tags'}
+    = f.input :tag_list, :as => :text, :label => 'Tags (industries, topics, etc)', :hint => "Comma separated, please", :input_html => {:class => 'tags'}
+
+    = f.label 'Categories'
+    = f.check_box :is_company
+    Company
+    %img(src="/images/maps/company.png")
+    ||
+    = f.check_box :is_startup
+    Startup
+    %img(src="/images/maps/startup.png")
+    ||
+    = f.check_box :is_accelerator
+    Accelerator
+    %img(src="/images/maps/accelerator.png")
+    ||
+    = f.check_box :is_organization
+    Organization
+    %img(src="/images/maps/organization.png")
+    ||
+    = f.check_box :is_coworking
+    Coworking
+    %img(src="/images/maps/coworking.png")
+    ||
+    = f.check_box :is_investor
+    Investor
+    %img(src="/images/maps/investor.png")
+    ||
+    = f.check_box :is_service
+    Service
+    %img(src="/images/maps/service.png")
+
     = f.input :technology_list, :as => :text, :label => 'Technologies used (languages, frameworks, etc)', :hint => "Comma separated, please", :input_html => {:class => 'tags'}
 
     %table{:border => "1"}
@@ -25,9 +57,15 @@
             = f.input :customer3, :as => :string, :label => 'Customer 3'
           %td
             = f.input :customer_url3, :as => :string, :label => 'Customer 3 Website (optional)'
+    %br/
 
-    = f.input :number_of_employees, :as => :string
-    = f.input :revenue, :as => :string
+    = f.label 'Number of Employees'
+    = select(:company, :number_of_employees, @number_of_employees_options)
+    %br/
+    %br/
+    = f.label 'Revenue'
+    = select(:company, :revenue, @revenue_options)
+
     - if @company.logo.file?
       %li
         .faux_label Current logo

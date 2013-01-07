@@ -55,39 +55,36 @@ class Group < ActiveRecord::Base
       :website => self.url,
       :jobs => nil,
       :name => name,
-      :category => get_categories_from_tags
+      :category => get_categories
     } }
   end
 
 
-  def get_categories_from_tags
+  def get_categories
     categories = ""
-    tags.each do |tag|
-      if tag.name.downcase == "startup"
-        categories = categories + "startup,"
-      end
-      if tag.name.downcase == "company"
-        categories = categories + "company,"
-      end
-      if tag.name.downcase == "accelerator"
-        categories = categories + "accelerator,"
-      end
-      if tag.name.downcase == "investor"
-        categories = categories + "investor,"
-      end
-      if tag.name.downcase == "coworking"
-        categories = categories + "coworking,"
-      end
-      if tag.name.downcase == "organization"
-        categories = categories + "organization,"
-      end
-      if tag.name.downcase == "service"
-        categories = categories + "service,"
-      end
-      if tag.name.downcase == "event"
-        categories = categories + "event,"
-      end
+
+    if self.is_startup
+      categories = categories + "startup,"
     end
+    if self.is_company
+      categories = categories + "company,"
+    end
+    if self.is_accelerator
+      categories = categories + "accelerator,"
+    end
+    if self.is_investor
+      categories = categories + "investor,"
+    end
+    if self.is_coworking
+      categories = categories + "coworking,"
+    end
+    if self.is_organization
+      categories = categories + "organization,"
+    end
+    if self.is_service
+      categories = categories + "service,"
+    end
+
     if categories.length < 1
       return "organization"
     else

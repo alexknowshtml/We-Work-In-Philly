@@ -52,72 +52,15 @@
           = @company.customer3
           != "<br/>"
 
-  - if @company.revenue.present? && @company.revenue > 100000000
+  - if @company.revenue.present?
     .section.revenue
       %h2 Revenue
-      = "$100,000,000+"
-  - elsif @company.revenue.present? && @company.revenue > 50000000
-    .section.revenue
-      %h2 Revenue
-      = "$50,000,000-$100,000,000"
-  - elsif @company.revenue.present? && @company.revenue > 5000000
-    .section.revenue
-      %h2 Revenue
-      = "$5,000,000-$50,000,000"
-  - elsif @company.revenue.present? && @company.revenue > 1000000
-    .section.revenue
-      %h2 Revenue
-      = "$1,000,000-$5,000,000"
-  - elsif @company.revenue.present? && @company.revenue > 500000
-    .section.revenue
-      %h2 Revenue
-      = "$500,000-$1,000,000"
-  - elsif @company.revenue.present? && @company.revenue > 100000
-    .section.revenue
-      %h2 Revenue
-      = "$100,000-$500,000"
-  - elsif @company.revenue.present? && @company.revenue > 50000
-    .section.revenue
-      %h2 Revenue
-      = "$50,000-$100,000"
-  - elsif @company.revenue.present? && @company.revenue > 100
-    .section.revenue
-      %h2 Revenue
-      = "$100-$50,000"
-  - elsif @company.revenue.present? && @company.revenue > 0
-    .section.revenue
-      %h2 Revenue
-      = "$0-$100"
+      = @company.revenue
 
-
-  - if @company.number_of_employees.present? && @company.number_of_employees > 10000
+  - if @company.number_of_employees.present?
     .section.number_of_employees
       %h2 Number Of Employees
-      = "10,001+"
-  - elsif @company.number_of_employees.present? && @company.number_of_employees > 5000
-    .section.number_of_employees
-      %h2 Number Of Employees
-      = "5,001-10,000"
-  - elsif @company.number_of_employees.present? && @company.number_of_employees > 1000
-    .section.number_of_employees
-      %h2 Number Of Employees
-      = "1,001-5000"
-  - elsif @company.number_of_employees.present? && @company.number_of_employees > 200
-    .section.number_of_employees
-      %h2 Number Of Employees
-      = "201-1,000"
-  - elsif @company.number_of_employees.present? && @company.number_of_employees > 50
-    .section.number_of_employees
-      %h2 Number Of Employees
-      = "51-200"
-  - elsif @company.number_of_employees.present? && @company.number_of_employees > 10
-    .section.number_of_employees
-      %h2 Number Of Employees
-      = "11-50"
-  - elsif @company.number_of_employees.present? && @company.number_of_employees > 0
-    .section.number_of_employees
-      %h2 Number Of Employees
-      = "1-10"
+      = @company.number_of_employees
 
 
   .section.members
