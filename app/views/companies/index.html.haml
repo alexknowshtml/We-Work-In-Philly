@@ -8,6 +8,6 @@
         = sort_link(:name) + ","
         = sort_link(:created_at, :label => "Date added", :default_order => :desc, :is_default => :desc) + ","
         = sort_link(:random)
-    = link_to "Map", '/map', :class => 'new'
+    = link_to "Map", '/companies/map', :class => 'new'
 
 = render :partial => 'companies/list', :object => @companies
