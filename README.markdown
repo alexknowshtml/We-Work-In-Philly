@@ -90,6 +90,10 @@ The above command will create a file in db/migrate. Then migrate the db with:
 
 The new column should now be in the db and model. More information on migrations can be found [here.](http://guides.rubyonrails.org/migrations.html#creating-a-standalone-migration)
 
+## Database migrations on heroku
+```
+$ heroku run rake db:migrate --app=wwip-staging
+```
 
 
 # Local Development 

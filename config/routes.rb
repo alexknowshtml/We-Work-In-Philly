@@ -6,6 +6,7 @@ Citizenry::Application.routes.draw do
   get '/opensearch(.:format)' => 'site#opensearch', :as => :opensearch
 
   resources :authentications
+  get 'companies/map' => 'maps#index'
   resources :companies do
     member do
       post 'join'
@@ -72,9 +73,6 @@ Citizenry::Application.routes.draw do
   get 'mapwidget' => 'maps#embed'
   get 'mapfeed' => 'maps#wwip_json'
 
-  # makes map and maps equivalent
-  get 'map' => 'maps#index'
-	
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
