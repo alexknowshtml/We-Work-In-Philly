@@ -75,7 +75,7 @@ class Company < ActiveRecord::Base
     end
 
     if categories.length < 1
-      return "company"
+      return "startup"
     else
       return categories[0, categories.length-1]
     end
