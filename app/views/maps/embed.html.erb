@@ -56,10 +56,10 @@
 
         //Get the location from the URL parameters. If a location is specified, filter for it.
         var loc = "";
-        var locIndex = document.URL.indexOf("loc=");
+        var locIndex = document.URL.indexOf("location=");
         if(locIndex > -1) {
             loc = document.URL.substr(locIndex);
-            loc = loc.replace("loc=","");
+            loc = loc.replace("location=","");
             loc = loc.split("&")[0];
 
             $.getJSON("/mapfeed", function (data) {
