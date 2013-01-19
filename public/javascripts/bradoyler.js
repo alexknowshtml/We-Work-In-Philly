@@ -41,7 +41,7 @@ function addMarker(location) {
         map: gMap
     });
 
-    var content = "<a style='font-size:22px; font-family: LeagueGothicRegular' href='/companies/" + location.user_id + "'>" + location.name + "</a><div>" + location.location + "<br /> <a href=" + location.website + " target='_blank'>" + location.website + "</a> ";
+    var content = "<a style='font-size:22px; font-family: LeagueGothicRegular' href='/companies/" + location.user_id + "' target='_blank'>" + location.name + "</a><div>" + location.location + "<br /> <a href=" + location.website + " target='_blank'>" + location.website + "</a> ";
 
     if(location.jobs != null) {
         content = content + "<a href=" + location.jobs + " target='_blank'>[Get a job here]</a> ";
