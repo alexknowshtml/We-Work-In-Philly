@@ -41,9 +41,14 @@ function addMarker(location) {
         map: gMap
     });
 
-    var content = "<a style='font-size:22px; font-family: LeagueGothicRegular' href='/companies/" + location.user_id + "'>" + location.name + "</a><div>" + location.location + "<br /> <a href=" + location.website + " target='_blank'>" + location.website + "</a> ";
+    var content;
+    if(location.is_group == true) {
+      content = "<a style='font-size:22px; font-family: LeagueGothicRegular' href='/groups/" + location.user_id + "'>" + location.name + "</a><div>" + location.location + "<br /> <a href=" + location.website + " target='_blank'>" + location.website + "</a> ";
+    } else {
+      content = "<a style='font-size:22px; font-family: LeagueGothicRegular' href='/companies/" + location.user_id + "'>" + location.name + "</a><div>" + location.location + "<br /> <a href=" + location.website + " target='_blank'>" + location.website + "</a> ";
+    }
 
-    if(location.jobs != null) {
+    if(location.jobs != null || location.jobs != "") {
         content = content + "<a href=" + location.jobs + " target='_blank'>[Get a job here]</a> ";
     }
     content = content + "</div>";
