@@ -104,7 +104,8 @@ end
         :website => self.url,
         :jobs => self.jobs_url,
         :name => name,
-        :category => get_categories
+        :category => get_categories,
+        :is_group => false
       } }
     end
 

@@ -55,7 +55,8 @@ class Group < ActiveRecord::Base
       :website => self.url,
       :jobs => nil,
       :name => name,
-      :category => get_categories
+      :category => get_categories,
+      :is_group => true
     } }
   end
 
