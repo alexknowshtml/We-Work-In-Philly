@@ -1,15 +1,8 @@
 development:
-  adapter: postgresql
-  database: citizenry_dev
-  encoding: sql_ascii
+  adapter: sqlite3
+  database: db/citizenry_dev.sqlite3
 
-  # this works for local development as well
-  # adapter: sqlite3
-  # database: db/development.sqlite3
-  # pool: 5
-  # timeout: 5000
 
 test:
-  adapter: postgresql
-  database: citizenry_test
-  encoding: sql_ascii
+  adapter: sqlite3
+  database: db/citizenry_test.sqlite3
