@@ -14,7 +14,7 @@ Citizenry::Application.routes.draw do
     end
   end
   get '/companies/tag/:tag(.:format)' => 'companies#tag', :as => 'companies_tagged', :constraints => {:tag => /.*/}
-
+  
   resources :groups do
     member do
       post 'join'
@@ -72,6 +72,9 @@ Citizenry::Application.routes.draw do
 
   get 'mapwidget' => 'maps#embed'
   get 'mapfeed' => 'maps#wwip_json'
+  
+  # not sure why linkedin auth redirects to /auth/linked_in instead of /auth/linkedin. this hack fixes it.
+  match "/auth/linked_in", :to => redirect("/auth/linkedin")
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

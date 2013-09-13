@@ -12,6 +12,7 @@ class Users::SessionsController < ApplicationController
     if @signin_data.provider == 'auto'
       redirect_to :controller => '/authentications', :action => :auto, :email => @signin_data.email
     else
+
       redirect_to "/auth/#{@signin_data.provider}"
     end
   end
