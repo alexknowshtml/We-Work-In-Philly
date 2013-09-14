@@ -17,4 +17,3 @@ log/searchd.development.pid
 .\#*
 .DS_Store
 *.swp
-go
