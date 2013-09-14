@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 # Required since new heroku staging environment defaults to v1.9.2p290
-ruby "1.8.7"
+ruby "1.9.2"
 
 gem 'rails', '3.0.9'
 gem 'rake', '0.9.2'
@@ -93,7 +93,7 @@ group :development, :test do
   # -- [ Tools ] ---------------------------------------------------------------
   gem 'heroku'
   gem 'rcov'
-  gem 'ruby-debug'
+  gem 'ruby-debug19'
   gem 'annotate'
   gem "nifty-generators"
   gem 'powder'
