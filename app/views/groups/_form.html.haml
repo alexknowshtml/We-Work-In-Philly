@@ -43,4 +43,4 @@
         .faux_label Current logo
         = image_tag @group.logo.url(:medium) if @group.logo.present?
     = f.input :logo, :label => "Upload a logo", :hint => "Preferably 220px wide or larger"
-  = f.buttons
+  = f.actions

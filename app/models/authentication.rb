@@ -20,6 +20,14 @@ class Authentication < ActiveRecord::Base
                         + SETTINGS['providers'].map{|provider|
                             [OmniAuth::Utils.camelize(provider), provider]
                           }
+                          
+  def self.provider_options
+    @provider_options ||= \
+      [[I18n.t('authentication_method.choose_automatically'), 'auto']] \
+        + SETTINGS['providers'].map{|provider|
+            [OmniAuth::Utils.camelize(provider), provider]
+          }
+  end
 
   def api_client
     APIClient.for(self)

@@ -3,21 +3,20 @@ source 'http://rubygems.org'
 # Required since new heroku staging environment defaults to v1.9.2p290
 ruby "1.9.2"
 
-gem 'rails', '3.0.9'
+gem 'rails', '3.2.14'
 gem 'rake', '0.9.2'
 
 gem 'geocoder'
 
 gem 'pg'
 
-gem 'aws-s3'
+gem 'aws-sdk'
 
 # gem 'hoptoad_notifier'
 
 #--[ Utility ]------------------------------------------------------------------
-gem 'httparty', '~> 0.7.4'
-gem "json", "~> 1.4.6"
-gem "json_builder"
+gem 'httparty', '~> 0.8.0'
+gem "json", "~> 1.6.1"
 gem "addressable", "2.3.2", :require => 'addressable/uri'
 gem "friendly_id4", "4.0.0.beta3", :require => "friendly_id"
 
@@ -46,10 +45,10 @@ gem 'omniauth-openid'
 
 #--[ Model ]--------------------------------------------------------------------
 gem "paperclip", "~> 2.3"
-gem "inherited_resources", "~> 1.2.1"
+gem "inherited_resources", "~> 1.3.1"
 gem "responders", "~> 0.6.2"
 
-gem 'acts-as-taggable-on', "~> 2.0.6"
+gem 'acts-as-taggable-on', "~> 2.1.1"
 
 gem 'paper_trail', '~> 2'
 
@@ -62,10 +61,9 @@ gem 'paper_trail_manager', :git => 'https://github.com/igal/paper_trail_manager.
 #--[ View ]---------------------------------------------------------------------
 gem "haml", "~> 3.1.2"
 gem "sass", "~> 3.1.4"
-gem "compass", "~> 0.10.5"
-gem "compass-960-plugin", "~> 0.9.13", :require => 'ninesixty'
-gem 'jquery-rails', '>= 0.2.6'
-gem 'formtastic', '~>1.1.0'
+gem "compass-960-plugin", "~> 0.10.4", :require => "ninesixty"
+gem "jquery-rails", ">= 1.0.14"
+gem "formtastic", "2.2.1"
 
 #--[ Controller ]---------------------------------------------------------------
 gem 'will_paginate', '~> 3.0.beta'
@@ -86,7 +84,7 @@ group :development, :test do
 
   # -- [ Tools ] ---------------------------------------------------------------
   gem 'heroku'
-  gem 'rcov'
+  gem "simplecov"
   gem 'ruby-debug19'
   gem 'annotate'
   gem "nifty-generators"
@@ -95,7 +93,7 @@ group :development, :test do
 end
 
 
-gem 'rspec-rails', '>= 2.0.0.beta.22'
+gem "rspec-rails", ">= 2.6.0"
 group :test do
   # -- [ Testing ] -------------------------------------------------------------
   gem "mocha"

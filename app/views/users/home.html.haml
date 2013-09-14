@@ -18,8 +18,8 @@
       = f.inputs do
         = f.input :email, :as => :hidden
         = f.input :provider, :collection => Authentication::PROVIDER_OPTIONS, :prompt => 'Pick a service…', :label => 'Add an account'
-      = f.buttons do
-        = f.commit_button "Add it!"
+      = f.actions do
+        = f.action(:submit, :as => :input, :label => "Add it!")
 
     = render :partial => 'authentications/list', :object => current_user.authentications
   #badges
