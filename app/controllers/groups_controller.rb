@@ -26,6 +26,6 @@ class GroupsController < InheritedResources::Base
   protected
 
   def collection
-    @groups ||= filter_sort_and_paginate(end_of_association_chain)
+    @groups ||= filter_sort_and_paginate(end_of_association_chain, true)
   end
 end

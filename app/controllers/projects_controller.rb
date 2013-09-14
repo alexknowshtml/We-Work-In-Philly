@@ -32,6 +32,6 @@ class ProjectsController < InheritedResources::Base
   protected
 
   def collection
-    @projects ||= filter_sort_and_paginate(end_of_association_chain)
+    @projects ||= filter_sort_and_paginate(end_of_association_chain, true)
   end
 end
