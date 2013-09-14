@@ -28,5 +28,6 @@ We Work in Philly was forked from the citizenry project. It seems this project i
 
 NOTE: you must login as "sample user" when you run the application. we do not reveal the twitter/linkedin keys. if you're working on twitter/linkedin integration, you can provide your own keys in the go script. 
 
+## Original Developer Notes
 
-
+Check out the [Original Developer Notes](https://github.com/alexknowshtml/We-Work-In-Philly/wiki/Developer-Notes).  There is a lot of useful recipes that explain how to setup development machines, switching from staging to production, migration of databases, etc.  It is not very organized though.
