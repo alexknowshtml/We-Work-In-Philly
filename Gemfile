@@ -8,12 +8,6 @@ gem 'rake', '0.9.2'
 
 gem 'geocoder'
 
-# You may need to add the following to your .bash_profile (or
-# similar):
-#
-#     export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
-#
-# gem 'mysql' 
 gem 'pg'
 
 gem 'aws-s3'
