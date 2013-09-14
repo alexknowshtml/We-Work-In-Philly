@@ -51,6 +51,15 @@
         - else
           = @company.customer3
           != "<br/>"
+  - if @company.company_type.present?
+    .section.company_type
+      %h2 Company Type
+      = @company.company_type
+
+  - if @company.region.present?
+    .section.region
+      %h2 Company Region
+      = @company.region
 
   - if @company.revenue.present?
     .section.revenue
