@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130107233826) do
+ActiveRecord::Schema.define(:version => 20130914193357) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(:version => 20130107233826) do
     t.boolean  "is_organization"
     t.boolean  "is_service"
     t.boolean  "is_startup"
+    t.string   "region"
+    t.string   "company_type"
   end
 
   add_index "companies", ["slug"], :name => "index_companies_on_slug", :unique => true

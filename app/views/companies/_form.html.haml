@@ -1,3 +1,5 @@
+-@region_options = ['North Philadelphia', 'South Philadelphia', 'Center City', 'West Philadelphia', 'Philadelphia Suburbs']
+-@company_type_options = ['Product', 'Services', 'Other']
 -@number_of_employees_options = ['','1-10','11-50','51-200','201-1,000','1,001-5,000','5,001-10,000','10,001+']
 -@revenue_options = ['','$0-$100','$100-$50,000','$50,000-$100,000','$100,000-$500,000','$500,000-$1,000,000','$1,000,000-$5,000,000','$5,000,000-$50,000,000','$50,000,000-$100,000,000','$100,000,000+']
 = semantic_form_for(@company, :html => {:multipart => true}) do |f|
@@ -6,9 +8,17 @@
     = f.input :url, :label => 'Website'
     = f.input :jobs_url, :label => 'Jobs Page URL'
     = f.input :address, :as => :string, :hint => "e.g. 20 N 3rd St, Philadelphia PA, 19106"
-    = f.input :description
+    %br/
+    = f.label 'Region'
+    = select(:company, :region, @region_options)
+    %br/
+    %br/
+    = f.label 'Company Type'
+    = select(:company, :company_type, @company_type_options)
+    %br/
+    %br/
     = f.input :tag_list, :as => :text, :label => 'Tags (industries, topics, etc)', :hint => "Comma separated, please", :input_html => {:class => 'tags'}
-
+    = f.input :description
     = f.label 'Categories'
     = f.check_box :is_company
     Company
