@@ -5,7 +5,10 @@
   %h3
     =link_to list_item.name, company_path(list_item)
   - if list_item.jobs_url.present?
-    %a{:href => "http://#{list_item.jobs_url}"} [Get a job here]
+    - if list_item.jobs_url.include? "http://" or list_item.jobs_url.include? "https://"
+      %a{:href => "#{list_item.jobs_url}"}= "[Get a job here]"
+    - else
+      %a{:href => "http://#{list_item.jobs_url}"}= "[Get a job here]"
   - if list_item.twitter.present?
     %span{:class => 'twitter_link'}
       %a{:href => "https://twitter.com/#{list_item.twitter}"}= "@#{list_item.twitter}"
