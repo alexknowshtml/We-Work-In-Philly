@@ -1,6 +1,12 @@
 # Development Box Setup
-We Work in Philly was forked from the citizenry project. It seems this project is no longer under active development. It is, however, useful for historical purposes and there is a rails 3.2 branch that hints at how to upgrade.
+We Work in Philly was forked from the citizenry project. It seems this project is no longer under active development. It is, however, useful for historical purposes.
 - https://github.com/reidab/citizenry/
+
+We Work in Philly is supported by all and owned by no one. Please see the GitHub issues log for some simple ways to contribute. There are several open items that might only require an hour or so of your time. If you have other ideas or enhancements, pull requests are always welcome.
+
+# Development Box Setup
+
+The setup assumes a nix based environment. If you are able to setup the build on a windows box, please document it here.  
 
 ## install PostgreSQL
 - On a Mac: `brew install postgres`
