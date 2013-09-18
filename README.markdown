@@ -18,7 +18,11 @@ We Work in Philly was forked from the citizenry project. It seems this project i
 `env ARCHFLAGS="-arch x86_64" bundle install`
 
 ## install imagemagick
+- On a Mac:
 `brew install imagemagick`
+
+- On Ubuntu / Debian:
+`sudo apt-get install imagemagick`
 
 ## create database, migrate, prepare db tests
 `bundle exec rake db:create db:migrate db:test:prepare`
