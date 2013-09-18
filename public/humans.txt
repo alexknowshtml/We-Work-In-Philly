@@ -29,6 +29,9 @@ Twitter: @vgupta16
 
 Developer: Dave Mox
 Github: @themoxman
+
+Developer: Brian Glick
+Github: @bglick
     
     
 /* THANKS */
