@@ -48,14 +48,13 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    if params[:page] && params[:page].to_i.to_s != params[:page]
-      params.delete(:page)
-      flash[:error]  = "Couldn't paginate results by invalid page number."
-    end
-
     if params[:page] == 'all'
       collection.all
     else
+      if params[:page] && params[:page].to_i.to_s != params[:page]
+        flash[:error]  = "Couldn't paginate results by invalid page number (#{params[:page].strip})."
+        params.delete(:page)
+      end
       collection.paginate(:page => params[:page], :per_page => params[:per_page] || params[:grid] ? 28 : 30)
     end
   end
